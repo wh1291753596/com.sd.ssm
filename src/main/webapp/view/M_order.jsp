@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -109,8 +113,8 @@
 		style="position: absolute; top: 0px; width: 100%; background-color: bisque;">
 		<form role="form">
 			<div style="text-align: center;">
-				<br /> <br /> <br /> <br /> <img src="../img/151887360012587.png"
-					style="width: 60%;" />
+				<br /> <br /> <br /> <br /> <img
+					src="../img/151887360012587.png" style="width: 60%;" />
 			</div>
 			<br /> <br /> <br />
 			<div class="form-group">
@@ -127,7 +131,7 @@
 
 			<table id="shuju"
 				class="table table-hover table-bordered table-responsive table-condensed"
-				style="display: none;">
+				style="display: ;">
 				<thead style="">
 					<tr style="font-size: xx-large;">
 						<th><input type="checkbox" name="selectall"
@@ -143,17 +147,21 @@
 					</tr>
 				</thead>
 				<tbody>
+
 					<tr style="font-size: x-large;">
-						<th><input type="checkbox" name="stuCheckBox"
-							style="width: 20px; height: 20px;" /></th>
-						<td>中通</td>
-						<td>126524</td>
-						<td>王顺</td>
-						<td>18165584984</td>
-						<td>2-2-314</td>
-						<td>2018/2/17 22.39</td>
-						<td>麻烦给我早点送过来，我要出去，谢谢</td>
-						<td>1.9</td>
+						<c:forEach items="${okok}" var="user">
+							<th><input type="checkbox" name="stuCheckBox"
+								style="width: 20px; height: 20px;" /></th>
+							<td>${user.name}</td>
+							<td>${user.shenfenzh }</td>
+							<td>${user.address }</td>
+							<td>18165584984</td>
+							<td>2-2-314</td>
+							<td>2018/2/17 22.39</td>
+							<td>麻烦给我早点送过来，我要出去，谢谢</td>
+							<td>1.9</td>
+						</c:forEach>
+
 					</tr>
 					<tr style="font-size: x-large;">
 						<th><input type="checkbox" name="stuCheckBox"
@@ -172,7 +180,7 @@
 
 			<table
 				class="table table-hover table-bordered table-responsive table-condensed"
-				style="display:;">
+				style="display:none;">
 				<thead style="">
 					<tr style="font-size: xx-large;">
 						<th><input type="checkbox" name="selectDaiJiall"

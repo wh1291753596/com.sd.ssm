@@ -15,25 +15,25 @@
 	$(document).ready(function() {
 		$("#sd").click(function() {
 			$("#tushus").hide();
-			$("#jianzhis").hide();
+			$("#works").hide();
 			$("#fulis").hide();
 			$("#sds").show(300);
 		});
-		$("#jianzhi").click(function() {
+		$("#work").click(function() {
 			$("#fulis").hide();
 			$("#tushus").hide();
 			$("#sds").hide();
-			$("#jianzhis").show(300);
+			$("#works").show(300);
 		});
 		$("#fuli").click(function() {
 			$("#tushus").hide();
 			$("#sds").hide();
-			$("#jianzhis").hide();
+			$("#works").hide();
 			$("#fulis").show(300);
 		});
 		$("#tushu").click(function() {
 			$("#sds").hide();
-			$("#jianzhis").hide();
+			$("#works").hide();
 			$("#fulis").hide();
 			$("#tushus").show(300);
 		});
@@ -47,7 +47,7 @@
 	<!--navbar-inverse 表示带反色（黑色背景，白色文字）的导航栏，navbar-fixed-top 表示 一直停留在顶部  添加 role="navigation"，有助于增加可访问性-->
 	<div id="photostyle">
 		<img src="../img/闪电速代.jpg" class="img-responsive" alt="SdCampus"
-			style="height: 100%;width:100px;">
+			style="height: 100%; width: 100px;">
 	</div>
 	</nav>
 	<!--表示只有在手机屏幕上才显示-->
@@ -112,32 +112,32 @@
 		<!--以下的两栏都是图标栏-->
 		<div id="myIcon"
 			style="position: absolute; top: 410px; width: 100%; background-color: white; height: 120px;">
-			<div class="col-xs-3" style="text-align: center;">
-				<img src="../img/1.jpg" style="width: 60%; height:100px ;" />
+			<div id="daiqu" class="col-xs-3" style="text-align: center;">
+				<img src="../img/1.jpg" style="width: 60%; height: 100px;" />
 			</div>
-			<div class="col-xs-3" style="text-align: center;">
-				<img src="../img/2.jpg" style="width: 60%; height:100px ;" />
+			<div id="daiji" class="col-xs-3" style="text-align: center;">
+				<img src="../img/2.jpg" style="width: 60%; height: 100px;" />
 			</div>
-			<div class="col-xs-3" style="text-align: center;">
-				<img src="../img/3.jpg" style="width: 60%; height:100px ;" />
+			<div id="ershoushu" class="col-xs-3" style="text-align: center;">
+				<img src="../img/3.jpg" style="width: 60%; height: 100px;" />
 			</div>
-			<div class="col-xs-3" style="text-align: center;">
-				<img src="../img/4.jpg" style="width: 60%; height:100px ;" />
+			<div id="jianzhi" class="col-xs-3" style="text-align: center;">
+				<img src="../img/4.jpg" style="width: 60%; height: 100px;" />
 			</div>
 		</div>
 		<div id="myIcon"
 			style="position: absolute; top: 530px; width: 100%; background-color: white; height: 120px;">
-			<div class="col-xs-3" style="text-align: center;">
-				<img src="../img/5.jpg" style="width: 60%; height:100px ;" />
+			<div id="huodong" class="col-xs-3" style="text-align: center;">
+				<img src="../img/5.jpg" style="width: 60%; height: 100px;" />
 			</div>
-			<div class="col-xs-3" style="text-align: center;">
-				<img src="../img/6.jpg" style="width: 60%; height:100px ;" />
+			<div id="kabao" class="col-xs-3" style="text-align: center;">
+				<img src="../img/6.jpg" style="width: 60%; height: 100px;" />
 			</div>
-			<div class="col-xs-3" style="text-align: center;">
-				<img src="../img/7.jpg" style="width: 60%; height:100px ;" />
+			<div id="jiaoyu" class="col-xs-3" style="text-align: center;">
+				<img src="../img/7.jpg" style="width: 60%; height: 100px;" />
 			</div>
-			<div class="col-xs-3" style="text-align: center;">
-				<img src="../img/8.jpg" style="width: 60%; height:100px ;" />
+			<div id="songshui" class="col-xs-3" style="text-align: center;">
+				<img src="../img/8.jpg" style="width: 60%; height: 100px;" />
 			</div>
 		</div>
 
@@ -150,7 +150,7 @@
 						style="width: 25%; font-size: xx-large; text-align: center;">
 						<a href="#">快递</a>
 					</li>
-					<li id="jianzhi"
+					<li id="work"
 						style="width: 25%; font-size: xx-large; text-align: center;">
 						<a href="#">兼职</a>
 					</li>
@@ -186,10 +186,7 @@
 							</div>
 							<div class="col-xs-3"
 								style="background-color:; text-align: right;">
-								<br />
-								<br />
-								<br />
-								<br /> <span
+								<br /> <br /> <br /> <br /> <span
 									style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
 								<span style="font-size: -webkit-xxx-large; color: red;"><b>￥1.90</b></span>
 							</div>
@@ -197,7 +194,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="jianzhis" style="display: none;">
+			<div id="works" style="display: none;">
 				<div id="" class="form-group"
 					style="position: relative; height: 430px; width: 100%; background-color:; overflow: hidden; border: groove;">
 					<div
@@ -220,11 +217,8 @@
 						</div>
 						<div class="col-xs-3"
 							style="background-color:; text-align: right;">
-							<br />
-							<br /> <span style="font-size: xx-large">X10</span> <br />
-							<br />
-							<br />
-							<br /> <span
+							<br /> <br /> <span style="font-size: xx-large">X10</span> <br />
+							<br /> <br /> <br /> <span
 								style="text-decoration: line-through; font-size: xx-large;">￥20.50</span>
 							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥9.90</b></span>
 						</div>
@@ -260,11 +254,8 @@
 						</div>
 						<div class="col-xs-3"
 							style="background-color:; text-align: right;">
-							<br />
-							<br /> <span style="font-size: xx-large">X10</span> <br />
-							<br />
-							<br />
-							<br /> <span
+							<br /> <br /> <span style="font-size: xx-large">X10</span> <br />
+							<br /> <br /> <br /> <span
 								style="text-decoration: line-through; font-size: xx-large;">￥20.50</span>
 							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥99.90</b></span>
 						</div>
@@ -298,11 +289,8 @@
 						</div>
 						<div class="col-xs-3"
 							style="background-color:; text-align: right;">
-							<br />
-							<br /> <span style="font-size: xx-large">X10</span> <br />
-							<br />
-							<br />
-							<br /> <span
+							<br /> <br /> <span style="font-size: xx-large">X10</span> <br />
+							<br /> <br /> <br /> <span
 								style="text-decoration: line-through; font-size: xx-large;">￥20.50</span>
 							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥9.90</b></span>
 						</div>
@@ -338,11 +326,8 @@
 						</div>
 						<div class="col-xs-3"
 							style="background-color:; text-align: right;">
-							<br />
-							<br /> <span style="font-size: xx-large">X10</span> <br />
-							<br />
-							<br />
-							<br /> <span
+							<br /> <br /> <span style="font-size: xx-large">X10</span> <br />
+							<br /> <br /> <br /> <span
 								style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
 							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥0.00</b></span>
 						</div>
@@ -372,11 +357,8 @@
 						</div>
 						<div class="col-xs-3"
 							style="background-color:; text-align: right;">
-							<br />
-							<br /> <span style="font-size: xx-large">X10</span> <br />
-							<br />
-							<br />
-							<br /> <span
+							<br /> <br /> <span style="font-size: xx-large">X10</span> <br />
+							<br /> <br /> <br /> <span
 								style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
 							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥0.00</b></span>
 						</div>
@@ -400,12 +382,12 @@
 				style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px; padding: 0px;" />
 
 		</div>
-		<div class="col-xs-4"
+		<div id="dingdan" class="col-xs-4"
 			style="text-align: center; background-color: white;">
 			<img src="../img/订单.jpg"
 				style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px;" />
 		</div>
-		<div class="col-xs-4"
+		<div id="wode" class="col-xs-4"
 			style="text-align: center; background-color: white;">
 			<img src="../img/我的.jpg"
 				style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px;" />
@@ -415,4 +397,43 @@
 	</div>
 
 </body>
+<script type="text/javascript">
+	var but1 = document.getElementById("wode");
+	var but2 = document.getElementById("dingdan");
+	but2.onclick = function() {
+		window.location.href = "orderManage.jsp";
+	}
+	but1.onclick = function() {
+		window.location.href = "my.jsp";
+	}
+	var photo1 = document.getElementById("daiqu");
+	photo1.onclick = function() {
+		window.location.href = "fetch.jsp";
+	}
+	var photo2 = document.getElementById("daiji");
+	photo2.onclick = function() {
+		window.location.href = "consign.jsp";
+	}
+	var photo3 = document.getElementById("ershoushu");
+	var but3 = document.getElementById("tushu");
+	photo3.onclick = function() {
+		but3.click();
+	}
+	var photo4 = document.getElementById("jianzhi");
+	var but4 = document.getElementById("work");
+	photo4.onclick = function() {
+		but4.click();
+	}
+	var photo5 = document.getElementById("huodong");
+	var but5 = document.getElementById("fuli");
+	photo5.onclick = function() {
+		but5.click();
+	}
+	var photo6 = document.getElementById("kabao");
+	photo6.onclick = function() {
+		window.location.href = "myTicket.jsp";
+	}
+	var photo7 = document.getElementById("jiaoyu");
+	var photo8 = document.getElementById("songshui");
+</script>
 </html>

@@ -62,13 +62,7 @@
 					<option>四川省成都市温江区四川农业大学</option>
 				</select>
 			</div>
-			<div class="form-group">
-				<label class="alert-success"
-					style="text-align: left; background-color: bisque;"><h1>
-						详细地址&nbsp;*：<br>
-					</h1></label> <input type="text" class="form-control" id="firstname"
-					placeholder="请输入详细地址" style="height: 50px; font-size: x-large;">
-			</div>
+			
 			<div id="apartmentType" class="form-group">
 				<label class="alert-success"
 					style="text-align: left; background-color: bisque;"><h1>
