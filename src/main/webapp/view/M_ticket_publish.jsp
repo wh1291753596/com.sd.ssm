@@ -4,39 +4,70 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>轮播图片</title>
+<title>卡券发布</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css" />
 <link rel="stylesheet" href="../css/sd_home.css" />
-<link rel="stylesheet" href="../css/common.css" />
-<link rel="stylesheet" href="../css/index.css" />
 <script
 	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script
 	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 </head>
 <body>
 	<div class="hidden-lg hidden-md"
-		style="position: absolute; top: 0px; width: 100%;">
+		style="position: absolute; top: 0px; width: 100%; background-color: bisque;">
 		<form role="form">
-			<div style="text-align: center;">
-				<br /> <br /> <br /> <br /> <img src="../img/151896360260545.png"
-					style="width: 60%;" />
-			</div>
-			<div style="padding: 20px">
-				<input onchange="FirstImg()" name="firstImg"
-					style="opacity: 0; position: absolute" type="file"
-					id="FirstfileImg" multiple="">
-				<div position:absolute="">
-					<p style="font-size: 30px; color: red;">选择图片</p>
+			<div
+				style="height: 100px; width: 100%; background-color: blueviolet; text-align: left;">
+				<br />
+				<div id="return">
+					<img src="../img/返回.png" style="height: 70px;" />
 				</div>
 			</div>
-
-			<fieldset style="width: 100%;">
-				<legend style="font-size: 25px;">图片预览</legend>
-				<div style="position: relative;" id="pictures"></div>
-			</fieldset>
-			<br /> <br /> <br /> <br />
+			<div class="form-group">
+				<br /> <br /> <label class="alert-warning"
+					style="text-align: left; background-color: bisque;"><h1>
+						卡券名称：<br>
+					</h1></label> <input type="text" class="form-control" id="name" name="name"
+					placeholder="10个字以内" style="height: 50px; font-size: x-large;">
+				<label class="alert-warning"
+					style="text-align: left; background-color: bisque;"><h1>
+						卡券类型：<br>
+					</h1></label> <input type="text" class="form-control" id="type" name="type"
+					placeholder="10个字以内" style="height: 50px; font-size: x-large;">
+				<label class="alert-warning"
+					style="text-align: left; background-color: bisque;"><h1>
+						卡券内容：<br>
+					</h1></label> <input type="text" class="form-control" id="description"
+					name="description" placeholder="10个字以内"
+					style="height: 50px; font-size: x-large;"> <label
+					class="alert-warning"
+					style="text-align: left; background-color: bisque;"><h1>
+						卡券价格：<br>
+					</h1></label> <input type="text" class="form-control" id="money" name="money"
+					placeholder="10个字以内" style="height: 50px; font-size: x-large;">
+				<label class="alert-warning"
+					style="text-align: left; background-color: bisque;"><h1>
+						卡券数量：<br>
+					</h1></label> <input type="text" class="form-control" id="money" name="money"
+					placeholder="10个字以内" style="height: 50px; font-size: x-large;">
+				<label class="alert-warning"
+					style="text-align: left; background-color: bisque;"><h1>
+						卡券预览图：<br>
+					</h1></label>
+				<div style="padding: 20px">
+					<input onchange="FirstImg()" name="firstImg"
+						style="opacity: 0; position: absolute" type="file"
+						id="FirstfileImg" multiple="">
+					<div position:absolute="">
+						<p style="font-size: 30px; color: red;">选择图片</p>
+					</div>
+					<fieldset style="width: 100%;">
+						<legend style="font-size: 25px;">图片预览</legend>
+						<div style="position: relative;" id="pictures"></div>
+					</fieldset>
+				</div>
+			</div>
+			<br />
 			<button type="submit" class="btn btn-success  btn-block"
 				style="height: 80px;">
 				<h2>确认提交</h2>
@@ -83,7 +114,7 @@
 				div
 						.setAttribute(
 								"style",
-								"position:relative;width:inherit;height:inherit;float:left;z-index:2;width:300px;margin-left:8px;margin-right:8px;");
+								"position:relative;width:inherit;height:inherit;float:left;z-index:2;width:290px;margin-left:8px;margin-right:8px;");
 				var del = document.createElement("div"); //删除按钮div
 				del
 						.setAttribute(
@@ -114,7 +145,7 @@
 
 				imgs.setAttribute("name", "loadimgs");
 				imgs.setAttribute("src", e.target.result);
-				imgs.setAttribute("width", 300);
+				imgs.setAttribute("width", 290);
 				if (document.getElementById(id).childNodes.length > 4) {
 					document.getElementById(id).removeChild(
 							document.getElementById(id).firstChild);
@@ -139,4 +170,5 @@
 		file.remove();
 	}
 </script>
+
 </html>

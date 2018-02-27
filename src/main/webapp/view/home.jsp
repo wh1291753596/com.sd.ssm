@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>主页</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css" />
-<link rel="stylesheet" href="../css/sd_home.css" />
+<link rel="stylesheet" href="../css/sd_home.css">
 <script
 	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script
@@ -41,9 +41,9 @@
 	})
 </script>
 </head>
-<body>
+<body style="background-color: white;">
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
-		style="height:100px;background-color:white ;border-color:white;">
+		style="height:100px;background-color:white;border-color:white;">
 	<!--navbar-inverse 表示带反色（黑色背景，白色文字）的导航栏，navbar-fixed-top 表示 一直停留在顶部  添加 role="navigation"，有助于增加可访问性-->
 	<div id="photostyle">
 		<img src="../img/闪电速代.jpg" class="img-responsive" alt="SdCampus"
@@ -52,7 +52,7 @@
 	</nav>
 	<!--表示只有在手机屏幕上才显示-->
 	<div class="hidden-lg hidden-md"
-		style="position: absolute; top: 100px; width: 100%; background-color:;">
+		style="position: absolute; top: 100px; width: 100%; background-color:white;">
 		<!--表示这是轮播栏-->
 		<div id="myCarousel" class="carousel slide" data-ride="carousel"
 			style="width: 100%; height: 400px;">
@@ -107,7 +107,7 @@
 
 		</div>
 
-		<div style="width: 100%; height: 10px; background-color:;"></div>
+		<div style="width: 100%; height: 10px; "></div>
 
 		<!--以下的两栏都是图标栏-->
 		<div id="myIcon"
@@ -142,9 +142,9 @@
 		</div>
 
 		<!--中间部分-->
-		<div style="top: 650px; position: absolute; width: 100%;">
-			<div style="width: 100%; height: 10px; background-color: gainsboro;"></div>
-			<div id="fixed" style="width: 100%; position:;" class="">
+		<div style="top: 650px; position: absolute; width: 100%;background-color: white;">
+			<div style="width: 100%; height: 10px;"></div>
+			<div id="fixed" style="width: 100%;background-color: white; " class="">
 				<ul class="nav nav-tabs">
 					<li id="sd"
 						style="width: 25%; font-size: xx-large; text-align: center;">
@@ -165,28 +165,31 @@
 				</ul>
 			</div>
 
-			<div style="width: 100%; height: 10px; background-color: gainsboro;"></div>
+			<div style="width: 100%; height: 10px;"></div>
 			<div id="sds">
 				<div class="form-group"
 					style="height: 350px; border: groove; border-radius: 5px;">
 					<div
-						style="position: relative; height: 60px; width: 100%; background-color: violet; font-size: 40px;">
+						style="position: relative; height: 60px; width: 100%;font-size: 40px;">
 						闪电校园旗下>></div>
 					<div
-						style="position: relative; height: 290px; width: 100%; background-color:; overflow: hidden;">
+						style="position: relative; height: 290px; width: 100%;overflow: hidden;">
 						<div class="col-xs-3"
 							style="background-color:; height: 290px; text-align: center;">
 							<img src="../img/快递.png" style="width: 80%; height: 80%;" />
 						</div>
-						<div class="col-xs-9" style="background-color:; height: 290px;">
+						<div class="col-xs-9" style="height: 290px;">
 
 							<div class="col-xs-9"
 								style="text-align: left; font-size: 50px; font-family: '楷体'; color: blueviolet;">
 								<br /> <b>闪电代取</b> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--闪电侠配送
 							</div>
 							<div class="col-xs-3"
-								style="background-color:; text-align: right;">
-								<br /> <br /> <br /> <br /> <span
+								style=" text-align: right;">
+								<br />
+								<br />
+								<br />
+								<br /> <span
 									style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
 								<span style="font-size: -webkit-xxx-large; color: red;"><b>￥1.90</b></span>
 							</div>
@@ -196,175 +199,126 @@
 			</div>
 			<div id="works" style="display: none;">
 				<div id="" class="form-group"
-					style="position: relative; height: 430px; width: 100%; background-color:; overflow: hidden; border: groove;">
-					<div
-						style="position: relative; height: 60px; width: 100%; background-color: violet; font-size: 40px;">
-						闪电校园旗下>></div>
-					<div class="col-xs-3"
-						style="background-color:; height: 300px; text-align: center;">
-						<img src="../img/makesi.jpg" style="width: 80%; height: 80%;" />
+					style="position: relative; height: 410px; width: 100%; overflow: hidden; border: groove;">
+					<div style="text-align: center;">
+						<p style="font-size: 50px; font-family: '楷体'; color: blueviolet;">曼得语言诚聘校园兼职</p>
 					</div>
-					<div class="col-xs-9"
-						style="background-color:; height: 300px; border:; border-radius: 25px;">
-						<div class="col-xs-9" style="text-align: left;">
-							<p style="font-size: 50px; font-family: '楷体'; color: blueviolet;">国色天乡乐园三期</p>
-							<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--发传发传单发传单发传单发传单发传单发传单发传单发</p>
-							<p style="font-size: 35px; font-family: '黑体'; color: red;">
-								<b>100一天，周结</b>
-							</p>
-							<p style="font-size: 35px;">限时</p>
-							<p style="font-size: 25px; font-family: times;">2018/2/17-2018/2/18</p>
-						</div>
-						<div class="col-xs-3"
-							style="background-color:; text-align: right;">
-							<br /> <br /> <span style="font-size: xx-large">X10</span> <br />
-							<br /> <br /> <br /> <span
-								style="text-decoration: line-through; font-size: xx-large;">￥20.50</span>
-							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥9.90</b></span>
-						</div>
+
+					<div class="col-xs-9" style="text-align: left;">
+						<p style="font-size: 35px; font-family: '宋体';">
+							学生助理:协助校园负责人安排校内工作;<br /> 兼职:负责协助学校内讲座开展，试听课，设点宣传，咨询，单页派发，下寝
+						</p>
+						<p style="font-size: 35px; font-family: '黑体'; color: red;">
+							<b>底薪+20/h+业绩提成</b>
+						</p>
+						<p style="font-size: 35px;">四川农业大学温江校区</p>
+						<p style="font-size: 25px; font-family: times;">2018/2/17-2018/2/18</p>
 					</div>
-					<div class="form-group"
-						style="height: 70px; border:; border-radius: 10px;">
+					<div class="col-xs-3" style=" text-align: right;">
+						<br />
+						<br /> <span style="font-size: xx-large;">人数需求</span> <br />
+						<br />
+						<br />
+						<br /> <span style="font-size: -webkit-xxx-large; color: red;"><b>X10</b></span>
+
+						<br />
+						<br />
 						<button
-							style="background-color: bisque; border: hidden; border-radius: 30px; height: 60px; width: 200px; font-size: 35px; color: brown;">点击报名</button>
+							style="background-color: ; border: hidden; height: 60px; width: 200px; font-size: 35px; color: brown;">点击报名</button>
+
 					</div>
+
 				</div>
 			</div>
 			<div id="tushus" style="display: none;">
 				<div id="" class="form-group"
-					style="position: relative; height: 430px; width: 100%; background-color:; overflow: hidden; border: groove;">
+					style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove;">
 					<div
-						style="position: relative; height: 60px; width: 100%; background-color: violet; font-size: 40px;">
+						style="position: relative; height: 60px; width: 100%;  font-size: 40px;">
 						闪电校园旗下>></div>
 					<div class="col-xs-3"
-						style="background-color:; height: 300px; text-align: center;">
-						<img src="../img/makesi.jpg" style="width: 80%; height: 80%;" />
+						style=" height: 300px; text-align: center;">
+						<br /> <img src="../img/makesi.jpg" style="width: 80%; height: 80%;" />
 					</div>
 					<div class="col-xs-9"
-						style="background-color:; height: 300px; border:; border-radius: 25px;">
+						style="height: 300px; border:; border-radius: 25px;">
+						<br />
 						<div class="col-xs-9" style="text-align: left;">
-							<p style="font-size: 50px; font-family: '楷体'; color: blueviolet;">马克思主义基本原理</p>
-							<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--2013年高等教育出版社出版图书</p>
-							<p style="font-size: 35px; font-family: '黑体'; color: red;">
-								<b>同济大学应用数学系</b>
-							</p>
-							<p style="font-size: 35px;">书籍</p>
-							<p style="font-size: 25px; font-family: times;">2018/2/13
-								17:55-2018/3/13 17:55</p>
+							<p id="title"
+								style="font-size: 50px; font-family: '楷体'; color: brown;">马克思基本原理</p>
+							<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--2013年高等教育出版社出版（同济大学应用数学系）</p>
 						</div>
 						<div class="col-xs-3"
-							style="background-color:; text-align: right;">
-							<br /> <br /> <span style="font-size: xx-large">X10</span> <br />
-							<br /> <br /> <br /> <span
-								style="text-decoration: line-through; font-size: xx-large;">￥20.50</span>
-							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥99.90</b></span>
+							style=" text-align: right;">
+							<br /> <span id="kucun" style="font-size: xx-large">X100</span>
+							<br />
+							<br />
+							<br /> <span id="yuanjia"
+								style="text-decoration: line-through; font-size: xx-large;">￥19.50</span>
+							<span id="xianjia"
+								style="font-size: -webkit-xxx-large; color: red;"><b>￥4.00</b></span>
 						</div>
-					</div>
-					<div class="form-group"
-						style="height: 70px; border:; border-radius: 10px;">
-						<button
-							style="background-color: bisque; border: hidden; border-radius: 30px; height: 60px; width: 200px; font-size: 35px; color: brown;">点击购买</button>
 					</div>
 				</div>
-				<div id="" class="form-group"
-					style="position: relative; height: 430px; width: 100%; background-color:; overflow: hidden; border: groove;">
-					<div
-						style="position: relative; height: 60px; width: 100%; background-color: violet; font-size: 40px;">
-						闪电校园旗下>></div>
-					<div class="col-xs-3"
-						style="background-color:; height: 300px; text-align: center;">
-						<img src="../img/makesi.jpg" style="width: 80%; height: 80%;" />
-					</div>
-					<div class="col-xs-9"
-						style="background-color:; height: 300px; border:; border-radius: 25px;">
-						<div class="col-xs-9" style="text-align: left;">
-							<p style="font-size: 50px; font-family: '楷体'; color: blueviolet;">马克思主义基本原理</p>
-							<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--2013年高等教育出版社出版图书</p>
-							<p style="font-size: 35px; font-family: '黑体'; color: red;">
-								<b>同济大学应用数学系</b>
-							</p>
-							<p style="font-size: 35px;">书籍</p>
-							<p style="font-size: 25px; font-family: times;">2018/2/13
-								17:55-2018/3/13 17:55</p>
-						</div>
-						<div class="col-xs-3"
-							style="background-color:; text-align: right;">
-							<br /> <br /> <span style="font-size: xx-large">X10</span> <br />
-							<br /> <br /> <br /> <span
-								style="text-decoration: line-through; font-size: xx-large;">￥20.50</span>
-							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥9.90</b></span>
-						</div>
-					</div>
-					<div class="form-group"
-						style="height: 70px; border:; border-radius: 10px;">
-						<button
-							style="background-color: bisque; border: hidden; border-radius: 30px; height: 60px; width: 200px; font-size: 35px; color: brown;">点击购买</button>
-					</div>
-				</div>
+
 			</div>
 			<div id="fulis" style="display: none;">
 				<div id="" class="form-group"
-					style="position: relative; height: 500px; width: 100%; background-color:; overflow: hidden; border: groove;">
+					style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove;">
 					<div
-						style="position: relative; height: 60px; width: 100%; background-color: violet; font-size: 40px;">
+						style="position: relative; height: 60px; width: 100%; font-size: 40px;">
 						闪电校园旗下>></div>
 					<div class="col-xs-3"
-						style="background-color:; height: 300px; text-align: center;">
-						<img src="../img/免费.png" style="width: 80%; height: 80%;" />
+						style=" height: 300px; text-align: center;">
+						<br /> <img src="../img/会员.png" style="width: 80%; height: 80%;" />
 					</div>
 					<div class="col-xs-9"
-						style="background-color:; height: 300px; border:; border-radius: 25px;">
+						style="height: 300px; border:; border-radius: 25px;">
+						<br />
 						<div class="col-xs-9" style="text-align: left;">
-							<p style="font-size: 50px; font-family: '楷体'; color: blueviolet;">闪电校园免单卡</p>
-							<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--闪电校园旗下业务</p>
-							<p style="font-size: 35px; font-family: '黑体'; color: red;">
-								<b>免单人工费！！！</b>
-							</p>
-							<p style="font-size: 35px;">次卡</p>
-							<p style="font-size: 25px; font-family: times;">2018/1/13
-								17:55-2018/2/13 17:55</p>
+							<p style="font-size: 50px; font-family: '楷体'; color: brown;">闪电校园会员卡</p>
+							<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--闪电校园旗下业务不要钱！！！</p>
+							<p style="font-size: 35px;">月卡</p>
+
 						</div>
 						<div class="col-xs-3"
-							style="background-color:; text-align: right;">
-							<br /> <br /> <span style="font-size: xx-large">X10</span> <br />
-							<br /> <br /> <br /> <span
+							style="text-align: right;">
+							<br /> <span style="font-size: xx-large">X1</span> <br />
+							<br />
+							<br /> <span
 								style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
 							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥0.00</b></span>
 						</div>
 					</div>
-
 				</div>
 				<div id="" class="form-group"
-					style="position: relative; height: 500px; width: 100%; background-color:; overflow: hidden; border: groove;">
+					style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove;">
 					<div
-						style="position: relative; height: 60px; width: 100%; background-color: violet; font-size: 40px;">
+						style="position: relative; height: 60px; width: 100%;  font-size: 40px;">
 						闪电校园旗下>></div>
 					<div class="col-xs-3"
-						style="background-color:; height: 300px; text-align: center;">
-						<img src="../img/免费.png" style="width: 80%; height: 80%;" />
+						style="height: 300px; text-align: center;">
+						<br /> <img src="../img/free.png" style="width: 80%; height: 80%;" />
 					</div>
 					<div class="col-xs-9"
-						style="background-color:; height: 300px; border:; border-radius: 25px;">
+						style="height: 300px; border:; border-radius: 25px;">
+						<br />
 						<div class="col-xs-9" style="text-align: left;">
-							<p style="font-size: 50px; font-family: '楷体'; color: blueviolet;">闪电校园免单卡</p>
-							<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--闪电校园旗下业务</p>
-							<p style="font-size: 35px; font-family: '黑体'; color: red;">
-								<b>免单人工费！！！</b>
-							</p>
+							<p style="font-size: 50px; font-family: '楷体'; color: brown;">闪电校园免单卡</p>
+							<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--闪电代取不要钱！！！</p>
 							<p style="font-size: 35px;">次卡</p>
-							<p style="font-size: 25px; font-family: times;">2018/1/13
-								17:55-2018/2/13 17:55</p>
 						</div>
 						<div class="col-xs-3"
-							style="background-color:; text-align: right;">
-							<br /> <br /> <span style="font-size: xx-large">X10</span> <br />
-							<br /> <br /> <br /> <span
-								style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
+							style="text-align: right;">
+							<br /> <span style="font-size: xx-large">X10</span> <br />
+							<br />
+							<br /> <span
+								style="text-decoration: line-through; font-size: xx-large;">￥20.50</span>
 							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥0.00</b></span>
 						</div>
 					</div>
-
 				</div>
+
 			</div>
 
 		</div>
