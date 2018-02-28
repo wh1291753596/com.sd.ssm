@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 地址详细信息查询 -->
+<!-- func1:根据用户id查询默认收货地址 -->
+<!-- func2:根据用户id查询所有收货地址 -->
+<mapper namespace="mapper.addressKeyInfoMapper">
+	<resultMap id="userAddresse" type="com.sd.bean.AddressKeyInfo">
+		<id property="accepterName" column="receiver"/>
+		<result property="accepterPhone" column="phone"/>
+		<result property="adressDetail" column="detail"/>
+	</resultMap>
+	
+	<select id="selectAddInfo" resultMap="userAddresse">
+		select
+			address.receiver,
+			address.phone,
+			address.detail
+		from
+			user
+		right join
+			address on address.user_id=user.id
+		where user.id=#{id}
+	</select>
+	
+	<select id="selectDefaultAddInfo" resultMap="userAddresse">
+		select
+			address.receiver,
+			address.phone,
+			address.detail
+		from
+			user
+		right join
+			address on address.user_id=user.id
+		where user.id=#{id} and address.id=user.default_address_id
+	</select>
+</mapper>

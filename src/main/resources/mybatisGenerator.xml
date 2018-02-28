@@ -10,8 +10,8 @@
 		</commentGenerator>
 		<!--配置数据库连接 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://localhost:3306/test" userId="root"
-			password="123">
+			connectionURL="jdbc:mysql://207.148.91.204/sdcampus" userId="root"
+			password="Happyma666">
 		</jdbcConnection>
 
 		<javaTypeResolver>
@@ -38,10 +38,8 @@
 		</javaClientGenerator>
 
 		<!-- 对应每个表 -->
-		
-		<table tableName="user" domainObjectName="user">
-		</table>
-		
+		<table tableName="user" domainObjectName="User"/>
+		<table tableName="address" domainObjectName="Address"/>		
 
 	</context>
 </generatorConfiguration>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+	<!-- 类型别名 -->
+	<typeAliases>
+		<package name="com.sd.bean" />
+	</typeAliases>
+	<!--环境配置   	development：开发模式;work：工作模式     -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://207.148.91.204/sdcampus?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8" />
+                <property name="username" value="root" />
+                <property name="password" value="Happyma666" />
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 导入映射文件 -->  
+    <mappers>
+    	<!-- 单个配置 -->
+        <mapper resource="mapper/addressKeyInfoMapper.xml"/>
+        <!-- 名字相同的dao文件和xml文件放在一起可直接扫描 -->
+ 		 <!-- <package name="com.sd.dao"/> -->
+    </mappers>
+</configuration>
