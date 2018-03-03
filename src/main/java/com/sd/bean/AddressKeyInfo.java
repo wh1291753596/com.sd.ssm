@@ -33,7 +33,7 @@ public class AddressKeyInfo {
 	
 	@Override
 	public String toString() {
-		String info = "ÊÕ¼şÈËĞÕÃû£º"+accepterName+"    ÊÕ¼şÈËÁªÏµ·½Ê½£º"+accepterPhone+"      ÊÕ¼şÈËÏêÏ¸µØÖ·£º"+adressDetail;
+		String info = "æ”¶ä»¶äººå§“åï¼š"+accepterName+"    ç”µè¯ï¼š"+accepterPhone+"      è¯¦ç»†åœ°å€ï¼š"+adressDetail;
 		return info;
 	}
 }
