@@ -33,13 +33,13 @@ public class GetUserAddressKeyInfo {
 		}
 	}
 	
-	public List<AddressKeyInfo> GetAddressByUserId(int id){
+	public List<AddressKeyInfo> GetNondefaulltAddressByUserId(int id){
 		try {
 			FileInputStream fStream=new FileInputStream("src/main/resources/mybatisConfig.xml");
 			SqlSession session=new SqlSessionFactoryBuilder().build(fStream).openSession();
 			this.session=session;
 			
-			//查询用户账下所有收货地址
+			//查询用户账下非默认收货地址
 			List<AddressKeyInfo> addressKeyInfos =session.selectList("mapper.addressKeyInfoMapper.selectAddInfo", id);
 		
 			return addressKeyInfos;

@@ -19,7 +19,7 @@
 			user
 		right join
 			address on address.user_id=user.id
-		where user.id=#{id}
+		where user.id=#{id} and address.id!=user.default_address_id
 	</select>
 	
 	<select id="selectDefaultAddInfo" resultMap="userAddresse">
