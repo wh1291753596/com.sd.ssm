@@ -20,7 +20,7 @@ public class GetUserAddressKeyInfo {
 			SqlSession session=new SqlSessionFactoryBuilder().build(fStream).openSession();
 			this.session=session;
 			//获取默认收货地址ַ
-			AddressKeyInfo addressInfo =session.selectOne("mapper.addressKeyInfoMapper.selectDefaultAddInfo", id);
+			AddressKeyInfo addressInfo =session.selectOne("mapper.AddressKeyInfoMapper.selectDefaultAddInfo", id);
 			
 			return addressInfo;
 		} catch (FileNotFoundException e) {
@@ -40,7 +40,7 @@ public class GetUserAddressKeyInfo {
 			this.session=session;
 			
 			//查询用户账下非默认收货地址
-			List<AddressKeyInfo> addressKeyInfos =session.selectList("mapper.addressKeyInfoMapper.selectAddInfo", id);
+			List<AddressKeyInfo> addressKeyInfos =session.selectList("mapper.AddressKeyInfoMapper.selectAddInfo", id);
 		
 			return addressKeyInfos;
 		} catch (FileNotFoundException e) {

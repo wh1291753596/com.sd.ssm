@@ -3,7 +3,7 @@
 <!-- 地址详细信息查询 -->
 <!-- func1:根据用户id查询默认收货地址 -->
 <!-- func2:根据用户id查询所有收货地址 -->
-<mapper namespace="mapper.addressKeyInfoMapper">
+<mapper namespace="mapper.AddressKeyInfoMapper">
 	<resultMap id="userAddresse" type="com.sd.bean.AddressKeyInfo">
 		<id property="accepterName" column="receiver"/>
 		<result property="accepterPhone" column="phone"/>

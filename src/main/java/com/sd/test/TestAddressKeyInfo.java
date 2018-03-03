@@ -25,7 +25,7 @@ public class TestAddressKeyInfo {
 		AddressKeyInfo defaultAddInfo=getAddInnfo.GetDefaultAddressByUserId(1);
 		System.out.println(defaultAddInfo.toString()+"\r\n");
 	
-		System.out.println("非收货地址为：");
+		System.out.println("非默认收货地址为：");
 		List<AddressKeyInfo> addressKeyInfos = getAddInnfo.GetNondefaulltAddressByUserId(1);
 		for(AddressKeyInfo addressKeyInfo : addressKeyInfos) {
 			System.out.println(addressKeyInfo.toString());

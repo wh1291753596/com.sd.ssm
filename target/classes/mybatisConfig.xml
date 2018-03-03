@@ -25,7 +25,7 @@
     <!-- 导入映射文件 -->  
     <mappers>
     	<!-- 单个配置 -->
-        <mapper resource="mapper/addressKeyInfoMapper.xml"/>
+        <mapper resource="mapper/AddressKeyInfoMapper.xml"/>
         <!-- 名字相同的dao文件和xml文件放在一起可直接扫描 -->
  		 <!-- <package name="com.sd.dao"/> -->
     </mappers>
