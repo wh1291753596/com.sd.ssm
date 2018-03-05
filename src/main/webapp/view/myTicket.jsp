@@ -75,7 +75,7 @@
 				style="height: 60px; border: groove; border-radius: 5px;">
 				<div
 					style="position: relative; height: 60px; width: 100%; background-color: violet; font-size: 40px;">
-					已使用卡券>></div>
+					未拥有卡券>></div>
 			</div>
 
 			<div id="yishiyongs" class="form-group"
@@ -106,12 +106,7 @@
 					</div>
 				</div>
 
-			<div id="weiyongyou" class="form-group"
-				style="height: 60px; border: groove; border-radius: 5px;">
-				<div
-					style="position: relative; height: 60px; width: 100%; background-color: violet; font-size: 40px;">
-					未拥有卡券>></div>
-			</div>
+			
 
 			
 		</form>

@@ -20,7 +20,7 @@
 				<br /> <br /> <br /> <br /> <img src="../img/151842100556939.png"
 					style="width: 60%;" />
 			</div>
-			<br /> <br /> <br />
+			<br /> <br /> <br />			
 			<div>
 				<div class="form-group"
 					style="height: 160px; border: groove; border-radius: 25px; border-width: thick;">

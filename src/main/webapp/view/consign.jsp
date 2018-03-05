@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -87,6 +88,16 @@
 						收件人姓名&nbsp;*：<br>
 					</h1></label> <input type="text" class="form-control" id="firstname"
 					placeholder="请输入收件人姓名" style="height: 50px;width:100%; font-size: x-large;">
+			</div>
+			<div>
+			12345
+			<c:forEach items="${mytest}" var="list">
+				<p>${list.name}</p>
+				<p>${list.phone}</p>
+				<p>${list.detail}</p>
+			</c:forEach>
+			
+			
 			</div>
 			<div class="form-group">
 				<label class="alert-success"

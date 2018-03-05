@@ -17,38 +17,29 @@
 		style="position: absolute; top: 0px; width: 100%; background-color: bisque;">
 		<form role="form">
 			<div style="text-align: center;">
-				<br /> <br /> <br /> <br /> <img src="../img/151853301694370.png"
-					style="width: 60%;" />
+				<br /> <br /> <br /> <br /> <img
+					src="../img/151853301694370.png" style="width: 60%;" />
 			</div>
 			<br /> <br /> <br /> <br />
 			<div class="form-group"
 				style="height: 260px; border: groove; border-radius: 25px;">
 				<div class="col-xs-1" style="text-align: center; height: 160px;">
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br /> <img src="../img/地址.png" />
+					<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <img
+						src="../img/地址.png" />
 
 				</div>
 				<div class="col-xs-11">
 					<div id="" style="float: left; height: 60px; background-color:;">
-						<br />
-						<br />
+						<br /> <br />
 						<h1 style="color: orange; font-family: '楷体';">&nbsp;收件人：王浩</h1>
 
 					</div>
 					<div id="" style="float: right; height: 60px;">
-						<br />
-						<br />
+						<br /> <br />
 						<h1 style="color: crimson;">18160072938</h1>
 					</div>
 					<div style="position: absolute; top: 60px; font-family: times;">
-						<br />
-						<br />
+						<br /> <br />
 						<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收货地址：四川省成都市温江区四川农业大学</h3>
 						<br />
 						<h2 style="font-family: '黑体';">
@@ -56,50 +47,36 @@
 						</h2>
 					</div>
 					<div style="right: 50px; position: absolute;">
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
+						<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 						<h1 style="color: orange; font-family:;">&nbsp;￥x.xx</h1>
 					</div>
 				</div>
 			</div>
 
-			<div class="form-group"
-				style="position: relative; height: 500px; width: 100%; background-color:; overflow: hidden; border: groove;">
+			<div id="" class="form-group"
+				style="position: relative; height: 495px; width: 100%; overflow: hidden; border: groove;">
 				<div
-					style="position: relative; height: 60px; width: 100%; background-color: violet; font-size: 40px;">
+					style="position: relative; height: 60px; width: 100%; font-size: 40px;">
 					闪电校园旗下>></div>
-				<div class="col-xs-3"
-					style="background-color:; height: 300px; text-align: center;">
-					<img src="../img/免费.png" style="width: 80%; height: 80%;" />
+				<div class="col-xs-3" style="height: 300px; text-align: center;">
+					<br /> <img src="../img/free.png" style="width: 80%; height: 80%;" />
 				</div>
 				<div class="col-xs-9"
-					style="background-color:; height: 300px; border:; border-radius: 25px;">
+					style="height: 300px; border:; border-radius: 25px;">
+					<br />
 					<div class="col-xs-9" style="text-align: left;">
-						<p style="font-size: 50px; font-family: '楷体'; color: blueviolet;">闪电校园免单卡</p>
-						<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--闪电校园旗下业务</p>
-						<p style="font-size: 35px; font-family: '黑体'; color: red;">
-							<b>免单人工费！！！</b>
-						</p>
+						<p style="font-size: 50px; font-family: '楷体'; color: brown;">闪电校园免单卡</p>
+						<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--闪电代取不要钱！！！</p>
 						<p style="font-size: 35px;">次卡</p>
-						<p style="font-size: 25px; font-family: times;">2018/1/13
-							17:55-2018/2/13 17:55</p>
 					</div>
-					<div class="col-xs-3" style="background-color:; text-align: right;">
-						<br />
-						<br /> <span style="font-size: xx-large">X10</span> <br />
-						<br />
-						<br />
+					<div class="col-xs-3" style="text-align: right;">
+						<br /> <span style="font-size: xx-large">X10</span> <br /> <br />
 						<br /> <span
-							style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
+							style="text-decoration: line-through; font-size: xx-large;">￥20.50</span>
 						<span style="font-size: -webkit-xxx-large; color: red;"><b>￥0.00</b></span>
 					</div>
 				</div>
+
 				<div class="form-group"
 					style="height: 140px; border:; border-radius: 10px;">
 					<h2>
@@ -110,21 +87,16 @@
 						style="font-size: x-large;"></textarea>
 				</div>
 			</div>
-
 			<br />
 			<div class="form-group"
-				style="position: fixed; bottom: 0px; height: 250px; background-color: bisque; width: 100%;">
+				style="position: fixed; bottom: 0px; height: 200px; background-color: bisque; width: 100%;">
 				<div class="form-group" style="height: 40px; width: 100%;">
 					<b style="font-size: 40px;">使用闪电校园会员卡</b> <input name="choose"
 						type="radio" value=""
 						style="height: 40px; width: 40px; float: right;" />
 
 				</div>
-				<div class="form-group" style="height: 40px; width: 100%;">
-					<b style="font-size: 40px;">使用闪电校园代取卡</b> <input name="choose"
-						type="radio" value=""
-						style="height: 40px; width: 40px; float: right;" />
-				</div>
+
 				<div class="form-group" style="height: 40px; width: 100%;">
 					<b style="font-size: 40px;">使用闪电校园免单卡</b> <input name="choose"
 						type="radio" value=""

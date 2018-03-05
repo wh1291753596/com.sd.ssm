@@ -89,34 +89,34 @@
 			</div>
 			<h2 class="page-header" style="color: red;">&nbsp;&nbsp;&nbsp;&nbsp;</h2>
 			<div class="form-group"
-				style="height: 350px; border: groove; border-radius: 5px;">
-				<div
-					style="position: relative; height: 60px; width: 100%; background-color: violet; font-size: 40px;">
-					闪电校园旗下>></div>
-				<div
-					style="position: relative; height: 290px; width: 100%; background-color:; overflow: hidden;">
-					<div class="col-xs-3"
-						style="background-color:; height: 290px; text-align: center;">
-						<img src="../img/快递.png" style="width: 80%; height: 80%;" />
-					</div>
-					<div class="col-xs-9" style="background-color:; height: 290px;">
-
-						<div class="col-xs-9"
-							style="text-align: left; font-size: 50px; font-family: '楷体'; color: blueviolet;">
-							<br /> <b>闪电代取</b> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--闪电侠配送
-						</div>
+					style="height: 350px; border: groove; border-radius: 5px;">
+					<div
+						style="position: relative; height: 60px; width: 100%;font-size: 40px;">
+						闪电校园旗下>></div>
+					<div
+						style="position: relative; height: 290px; width: 100%;overflow: hidden;">
 						<div class="col-xs-3"
-							style="background-color:; text-align: right;">
-							<br />
-							<br />
-							<br />
-							<br /> <span
-								style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
-							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥1.90</b></span>
+							style="background-color:; height: 290px; text-align: center;">
+							<img src="../img/快递.png" style="width: 80%; height: 80%;" />
+						</div>
+						<div class="col-xs-9" style="height: 290px;">
+
+							<div class="col-xs-9"
+								style="text-align: left; font-size: 50px; font-family: '楷体'; color: blueviolet;">
+								<br /> <b>闪电代取</b> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--闪电侠配送
+							</div>
+							<div class="col-xs-3"
+								style=" text-align: right;">
+								<br />
+								<br />
+								<br />
+								<br /> <span
+									style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
+								<span style="font-size: -webkit-xxx-large; color: red;"><b>￥1.90</b></span>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			<div class="form-group"
 				style="height: 70px; border: groove; border-radius: 10px;">
 				<button

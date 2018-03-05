@@ -27,9 +27,11 @@
 					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>商品名称：<br></h1></label>
 					<input type="text" class="form-control" id="name" name="name" placeholder="10个字以内" style="height: 50px;font-size: x-large;">
 					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>商品库存：<br></h1></label>
-					<input type="text" class="form-control" id="stock" name="stock" placeholder="10个字以内" style="height: 50px;font-size: x-large;">
-					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>商品内容：<br></h1></label>
-					<input type="text" class="form-control" id="detail" name="detail" placeholder="10个字以内" style="height: 50px;font-size: x-large;">
+					<input type="text" class="form-control" id="stock" name="stock" placeholder="10个字以内" style="height: 50px;font-size: x-large;">					
+					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>作者：<br></h1></label>
+					<input type="text" class="form-control" id="author" name="author" placeholder="10个字以内" style="height: 50px;font-size: x-large;">
+					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>出版社：<br></h1></label>
+					<input type="text" class="form-control" id="press" name="press" placeholder="10个字以内" style="height: 50px;font-size: x-large;">
 					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>商品原价：<br></h1></label>
 					<input type="text" class="form-control" id="money_past" name="money_past" placeholder="10个字以内" style="height: 50px;font-size: x-large;">
 					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>商品现价：<br></h1></label>

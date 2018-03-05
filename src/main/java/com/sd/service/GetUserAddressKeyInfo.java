@@ -10,12 +10,13 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import com.sd.bean.AddressKeyInfo;
 
 public class GetUserAddressKeyInfo {
+	
 	private SqlSession session;
 
 	public AddressKeyInfo GetDefaultAddressByUserId(int id) {
 		try {
 			// 获取mybatis配置文件
-			FileInputStream fStream=new FileInputStream("src/main/resources/mybatisConfig.xml");
+			FileInputStream fStream=new FileInputStream("E:/EclipseFiles/com.sd.ssm/src/main/resources/mybatisConfig.xml");
 			//创建执行对象
 			SqlSession session=new SqlSessionFactoryBuilder().build(fStream).openSession();
 			this.session=session;
@@ -35,7 +36,7 @@ public class GetUserAddressKeyInfo {
 	
 	public List<AddressKeyInfo> GetNondefaulltAddressByUserId(int id){
 		try {
-			FileInputStream fStream=new FileInputStream("src/main/resources/mybatisConfig.xml");
+			FileInputStream fStream=new FileInputStream("E:/EclipseFiles/com.sd.ssm/src/main/resources/mybatisConfig.xml");
 			SqlSession session=new SqlSessionFactoryBuilder().build(fStream).openSession();
 			this.session=session;
 			
