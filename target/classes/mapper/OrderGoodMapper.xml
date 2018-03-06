@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sd.dao.OrderGoodMapper">
+  <resultMap id="BaseResultMap" type="com.sd.bean.OrderGood">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="good_id" jdbcType="INTEGER" property="goodId" />
+    <result column="good_name" jdbcType="VARCHAR" property="goodName" />
+    <result column="thumbnail_id" jdbcType="INTEGER" property="thumbnailId" />
+    <result column="discount_price" jdbcType="DECIMAL" property="discountPrice" />
+    <result column="shop_price" jdbcType="DECIMAL" property="shopPrice" />
+    <result column="good_quantity" jdbcType="TINYINT" property="goodQuantity" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, order_id, good_id, good_name, thumbnail_id, discount_price, shop_price, good_quantity, 
+    create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.sd.bean.OrderGoodExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from order_good
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from order_good
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from order_good
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.sd.bean.OrderGoodExample">
+    delete from `order_good`
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.sd.bean.OrderGood">
+    insert into order_good (id, order_id, good_id, 
+      good_name, thumbnail_id, discount_price, 
+      shop_price, good_quantity, create_time, 
+      update_time)
+    values (#{id,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{goodId,jdbcType=INTEGER}, 
+      #{goodName,jdbcType=VARCHAR}, #{thumbnailId,jdbcType=INTEGER}, #{discountPrice,jdbcType=DECIMAL}, 
+      #{shopPrice,jdbcType=DECIMAL}, #{goodQuantity,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sd.bean.OrderGood">
+    insert into `order_good`
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="goodId != null">
+        good_id,
+      </if>
+      <if test="goodName != null">
+        good_name,
+      </if>
+      <if test="thumbnailId != null">
+        thumbnail_id,
+      </if>
+      <if test="discountPrice != null">
+        discount_price,
+      </if>
+      <if test="shopPrice != null">
+        shop_price,
+      </if>
+      <if test="goodQuantity != null">
+        good_quantity,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="goodId != null">
+        #{goodId,jdbcType=INTEGER},
+      </if>
+      <if test="goodName != null">
+        #{goodName,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnailId != null">
+        #{thumbnailId,jdbcType=INTEGER},
+      </if>
+      <if test="discountPrice != null">
+        #{discountPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="shopPrice != null">
+        #{shopPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="goodQuantity != null">
+        #{goodQuantity,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.sd.bean.OrderGoodExample" resultType="java.lang.Long">
+    select count(*) from order_good
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update order_good
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodId != null">
+        good_id = #{record.goodId,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodName != null">
+        good_name = #{record.goodName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.thumbnailId != null">
+        thumbnail_id = #{record.thumbnailId,jdbcType=INTEGER},
+      </if>
+      <if test="record.discountPrice != null">
+        discount_price = #{record.discountPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.shopPrice != null">
+        shop_price = #{record.shopPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.goodQuantity != null">
+        good_quantity = #{record.goodQuantity,jdbcType=TINYINT},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update order_good
+    set id = #{record.id,jdbcType=INTEGER},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      good_id = #{record.goodId,jdbcType=INTEGER},
+      good_name = #{record.goodName,jdbcType=VARCHAR},
+      thumbnail_id = #{record.thumbnailId,jdbcType=INTEGER},
+      discount_price = #{record.discountPrice,jdbcType=DECIMAL},
+      shop_price = #{record.shopPrice,jdbcType=DECIMAL},
+      good_quantity = #{record.goodQuantity,jdbcType=TINYINT},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sd.bean.OrderGood">
+    update order_good
+    <set>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="goodId != null">
+        good_id = #{goodId,jdbcType=INTEGER},
+      </if>
+      <if test="goodName != null">
+        good_name = #{goodName,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnailId != null">
+        thumbnail_id = #{thumbnailId,jdbcType=INTEGER},
+      </if>
+      <if test="discountPrice != null">
+        discount_price = #{discountPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="shopPrice != null">
+        shop_price = #{shopPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="goodQuantity != null">
+        good_quantity = #{goodQuantity,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sd.bean.OrderGood">
+    update order_good
+    set order_id = #{orderId,jdbcType=INTEGER},
+      good_id = #{goodId,jdbcType=INTEGER},
+      good_name = #{goodName,jdbcType=VARCHAR},
+      thumbnail_id = #{thumbnailId,jdbcType=INTEGER},
+      discount_price = #{discountPrice,jdbcType=DECIMAL},
+      shop_price = #{shopPrice,jdbcType=DECIMAL},
+      good_quantity = #{goodQuantity,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
