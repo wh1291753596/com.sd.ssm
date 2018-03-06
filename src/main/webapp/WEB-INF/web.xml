@@ -26,22 +26,23 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	
 
 	<!-- Map all requests to the DispatcherServlet for handling -->
 	<servlet-mapping>
 		<servlet-name>springDispatcherServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>  
-        <servlet-name>default</servlet-name>  
-        <url-pattern>*.js</url-pattern>
-        <url-pattern>*.pdf</url-pattern>
-        <url-pattern>*.jpg</url-pattern>
-        <url-pattern>*.css</url-pattern>
-        <url-pattern>*.gif</url-pattern>
-        <url-pattern>*.png</url-pattern>
-    </servlet-mapping>
-	
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.js</url-pattern>
+		<url-pattern>*.pdf</url-pattern>
+		<url-pattern>*.jpg</url-pattern>
+		<url-pattern>*.css</url-pattern>
+		<url-pattern>*.gif</url-pattern>
+		<url-pattern>*.png</url-pattern>
+	</servlet-mapping>
+
 
 	<filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
@@ -66,17 +67,12 @@
 	</filter-mapping>
 
 	<!-- 使用rest风格的url 将普通页面的post请求转为指定的delete或者put请求 -->
-	<!-- <filter>
-		<filter-name>HiddenHttpMethodFilter</filter-name>
-		<filter-class>org.springframework.web.filter.HiddenHttpMethodFiltert</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>HiddenHttpMethodFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping> -->
+	<!-- <filter> <filter-name>HiddenHttpMethodFilter</filter-name> <filter-class>org.springframework.web.filter.HiddenHttpMethodFiltert</filter-class> 
+		</filter> <filter-mapping> <filter-name>HiddenHttpMethodFilter</filter-name> 
+		<url-pattern>/*</url-pattern> </filter-mapping> -->
 
-	<welcome-file-list>
+	<!-- <welcome-file-list>
 		<welcome-file>home.jsp</welcome-file>
-	</welcome-file-list>
+	</welcome-file-list> -->
 
 </web-app>
