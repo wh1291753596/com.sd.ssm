@@ -3,7 +3,21 @@ package com.sd.bean;
 import java.util.Date;
 
 public class Send {
-    private Integer id;
+    public Send() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Send(Integer id, String takeTime, String company, Date createTime, Date updateTime) {
+		super();
+		this.id = id;
+		this.takeTime = takeTime;
+		this.company = company;
+		this.createTime = createTime;
+		this.updateTime = updateTime;
+	}
+
+	private Integer id;
 
     private String takeTime;
 

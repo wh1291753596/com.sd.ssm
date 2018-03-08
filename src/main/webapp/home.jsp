@@ -364,7 +364,8 @@
 	}
 	var photo2 = document.getElementById("daiji");
 	photo2.onclick = function() {
-		window.location.href = "${pageContext.request.contextPath}/consign/up";
+		//window.location.href = "${pageContext.request.contextPath}/consign/up";
+		window.location.href = "view/consign.jsp";
 	}
 	/* function hello(){
 		var btn9 = document.getElementById("daiji");

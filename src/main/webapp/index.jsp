@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Refresh" content="1;url=home/home">
+ <meta http-equiv="Refresh" content="1;url=home.jsp"> 
+ <!-- <meta http-equiv="Refresh" content="1;url=home/home">  -->
 <title>测试</title>
 </head>
 <body>

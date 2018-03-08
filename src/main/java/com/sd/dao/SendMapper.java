@@ -2,6 +2,8 @@ package com.sd.dao;
 
 import com.sd.bean.Send;
 import com.sd.bean.SendExample;
+
+import java.util.Date;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -19,6 +21,8 @@ public interface SendMapper {
     List<Send> selectByExample(SendExample example);
 
     Send selectByPrimaryKey(Integer id);
+    
+    Send selectByCreateTime(Date createTime);
 
     int updateByExampleSelective(@Param("record") Send record, @Param("example") SendExample example);
 

@@ -89,7 +89,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from order
+    from `order`
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -100,15 +100,21 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from order
+    from `order`
     where id = #{id,jdbcType=INTEGER}
   </select>
+    <select id="selectByCreateTime" parameterType="java.util.Date" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from `order`
+    where create_time = #{createTime,jdbcType=TIMESTAMP}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from order
+    delete from `order`
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.sd.bean.OrderExample">
-    delete from order
+    delete from `order`
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -237,13 +243,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.sd.bean.OrderExample" resultType="java.lang.Long">
-    select count(*) from order
+    select count(*) from `order`
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update order
+    update `order`
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
@@ -302,7 +308,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update order
+    update `order`
     set id = #{record.id,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=INTEGER},
       order_status_id = #{record.orderStatusId,jdbcType=INTEGER},
@@ -325,7 +331,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.sd.bean.Order">
-    update order
+    update `order`
     <set>
       <if test="userId != null">
         user_id = #{userId,jdbcType=INTEGER},
@@ -379,7 +385,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.sd.bean.Order">
-    update order
+    update `order`
     set user_id = #{userId,jdbcType=INTEGER},
       order_status_id = #{orderStatusId,jdbcType=INTEGER},
       order_number = #{orderNumber,jdbcType=VARCHAR},

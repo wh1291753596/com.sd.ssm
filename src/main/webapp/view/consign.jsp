@@ -23,10 +23,12 @@
 <body>
 	<div class="hidden-lg hidden-md"
 		style="position: absolute; top: 0px; width: 100%; background-color: bisque;">
-		<form role="form">
+		<form role="form"
+			action="${pageContext.request.contextPath}/consign/up" method="post">
+
 			<div style="text-align: center;">
-				<br /> <br /> <br /> <br /> <img src="../img/151818501140373.png"
-					style="width: 60%;" />
+				<br /> <br /> <br /> <br /> <img
+					src="../img/151818501140373.png" style="width: 60%;" />
 			</div>
 			<br /> <br />
 			<div class="form-group">
@@ -73,8 +75,8 @@
 				<label class="alert-success"
 					style="text-align: left; background-color: bisque;"><h1>
 						快递公司&nbsp;*：<br>
-					</h1></label> <select class="form-control"
-					style="height: 50px; font-size: x-large;width:100%">
+					</h1></label> <select class="form-control" name="peoplecompany"
+					style="height: 50px; font-size: x-large; width: 100%">
 					<option>中通</option>
 					<option>2</option>
 					<option>3</option>
@@ -87,9 +89,10 @@
 					style="text-align: left; background-color: bisque;"><h1>
 						收件人姓名&nbsp;*：<br>
 					</h1></label> <input type="text" class="form-control" id="firstname"
-					placeholder="请输入收件人姓名" style="height: 50px;width:100%; font-size: x-large;">
+					name="peoplename" placeholder="请输入收件人姓名"
+					style="height: 50px; width: 100%; font-size: x-large;">
 			</div>
-			<div>
+			<%-- <div>
 			12345
 			<c:forEach items="${mytest}" var="list">
 				<p>${list.name}</p>
@@ -98,13 +101,14 @@
 			</c:forEach>
 			
 			
-			</div>
+			</div> --%>
 			<div class="form-group">
 				<label class="alert-success"
 					style="text-align: left; background-color: bisque;"><h1>
 						收件人电话&nbsp;*：<br>
 					</h1></label> <input type="text" class="form-control" id="firstname"
-					placeholder="请输入收件人电话" style="height: 50px; width:100%;font-size: x-large;">
+					name="peoplephone" placeholder="请输入收件人电话"
+					style="height: 50px; width: 100%; font-size: x-large;">
 			</div>
 			<div class="form-group">
 				<label class="alert-success"
@@ -112,7 +116,7 @@
 						收件人地址&nbsp;：<br>
 					</h1></label>
 				<textarea class="form-control" rows="3" placeholder="请输入收件人地址"
-					style="font-size: x-large;width:100%;"></textarea>
+					name="peopleaddress" style="font-size: x-large; width: 100%;"></textarea>
 			</div>
 
 			<div class="form-group">
@@ -121,11 +125,11 @@
 						备注&nbsp;：<br>
 					</h1></label>
 				<textarea class="form-control" rows="2" placeholder="请输入备注(可选)"
-					style="font-size: x-large;width:100%;"></textarea>
+					name="peopleinfo" style="font-size: x-large; width: 100%;"></textarea>
 			</div>
 			<br /> <br /> <br /> <br />
 			<button type="submit" class="btn btn-success  btn-block"
-				style="height: 80px;width:100%;">
+				style="height: 80px; width: 100%;">
 				<h2>提交</h2>
 			</button>
 			<br /> <br /> <br />

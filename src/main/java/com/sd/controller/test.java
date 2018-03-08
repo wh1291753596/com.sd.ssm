@@ -1,6 +1,9 @@
 package com.sd.controller;
 
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,10 +14,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sd.bean.AddressKeyInfo;
+import com.sd.bean.Order;
+import com.sd.bean.Send;
 import com.sd.service.GetUserAddressKeyInfo;
+import com.sd.service.OrderManageTool;
 
 @Controller
-@RequestMapping("/consign")
+/*@RequestMapping("/consign")*/
 public class test {
 	int id=1;
 	//System.out.println("");
@@ -38,4 +44,34 @@ public class test {
 		return "consign";
 		
 	}
+	@RequestMapping("/consignss")
+	public String cons(HttpServletRequest request,Model model) {
+		System.out.println("测试上传\r\n");
+		
+		String conpany=request.getParameter("peoplecompany");
+		String name=request.getParameter("peoplename");
+		String phone=request.getParameter("peoplephone");
+		String address=request.getParameter("peopleaddress");
+		String info=request.getParameter("peopleinfo");
+		
+		
+		Send send=new Send();
+		Order order =new Order();
+		send.setCompany(conpany);
+		order.setReceiver(name);
+		order.setPhone(phone);
+		order.setAddress(address);
+		order.setRemark(info);
+		OrderManageTool orderManageTool=new OrderManageTool();
+		
+		Date now=new Date();
+		//SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		//df.format(now);
+		
+		
+		orderManageTool.CreateSendOrder(send, order, now);
+		System.out.println("chengg\r\n");
+		return "my";
+	}
+	
 }

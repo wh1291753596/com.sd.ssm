@@ -89,6 +89,12 @@
     from send
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByCreateTime" parameterType="java.util.Date" resultMap="BaseResultMap">
+  select 
+  <include refid="Base_Column_List" />
+    from send
+    where create_time = #{createTime,jdbcType=TIMESTAMP}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from send
     where id = #{id,jdbcType=INTEGER}
