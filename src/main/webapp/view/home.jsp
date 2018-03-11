@@ -13,7 +13,7 @@
 <title>主页</title>
 <link rel="stylesheet"
 	href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/sd_home.css">
+<link rel="stylesheet" href="../css/sd_home.css">
 <script
 	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script
@@ -54,7 +54,7 @@
 		style="height:100px;background-color:white;border-color:white;">
 	<!--navbar-inverse 表示带反色（黑色背景，白色文字）的导航栏，navbar-fixed-top 表示 一直停留在顶部  添加 role="navigation"，有助于增加可访问性-->
 	<div id="photostyle">
-		<img src="img/闪电速代.jpg" class="img-responsive" alt="SdCampus"
+		<img src="../img/闪电速代.jpg" class="img-responsive" alt="SdCampus"
 			style="height: 100%; width: 100px;">
 	</div>
 	</nav>
@@ -78,14 +78,14 @@
 			<div class="carousel-inner" role="listbox">
 				<!--第一页-->
 				<div id="div0" class="item active">
-					<img src="img/2.png" alt="First slide"
+					<img src="../img/2.png" alt="First slide"
 						style="height: 400px; width: 100%;">
 					<!--图片添加区域-->
 
 				</div>
 				<!--第二页-->
 				<div class="item">
-					<img src="img/goods1.jpg" alt="Second slide"
+					<img src="../img/goods1.jpg" alt="Second slide"
 						style="height: 400px; width: 100%;">
 					<!--图片加载区-->
 
@@ -121,32 +121,32 @@
 		<div id="myIcon"
 			style="position: absolute; top: 410px; width: 100%; background-color: white; height: 120px;">
 			<div id="daiqu" class="col-xs-3" style="text-align: center;">
-				<img src="img/1.jpg" style="width: 60%; height: 100px;" />
+				<img src="../img/1.jpg" style="width: 60%; height: 100px;" />
 			</div>
 			<div id="daiji" onclick="hello()" class="col-xs-3"
 				style="text-align: center;">
-				<img src="img/2.jpg" style="width: 60%; height: 100px;" />
+				<img src="../img/2.jpg" style="width: 60%; height: 100px;" />
 			</div>
 			<div id="ershoushu" class="col-xs-3" style="text-align: center;">
-				<img src="img/3.jpg" style="width: 60%; height: 100px;" />
+				<img src="../img/3.jpg" style="width: 60%; height: 100px;" />
 			</div>
 			<div id="jianzhi" class="col-xs-3" style="text-align: center;">
-				<img src="img/4.jpg" style="width: 60%; height: 100px;" />
+				<img src="../img/4.jpg" style="width: 60%; height: 100px;" />
 			</div>
 		</div>
 		<div id="myIcon"
 			style="position: absolute; top: 530px; width: 100%; background-color: white; height: 120px;">
 			<div id="huodong" class="col-xs-3" style="text-align: center;">
-				<img src="img/5.jpg" style="width: 60%; height: 100px;" />
+				<img src="../img/5.jpg" style="width: 60%; height: 100px;" />
 			</div>
 			<div id="kabao" class="col-xs-3" style="text-align: center;">
-				<img src="img/6.jpg" style="width: 60%; height: 100px;" />
+				<img src="../img/6.jpg" style="width: 60%; height: 100px;" />
 			</div>
 			<div id="jiaoyu" class="col-xs-3" style="text-align: center;">
-				<img src="img/7.jpg" style="width: 60%; height: 100px;" />
+				<img src="../img/7.jpg" style="width: 60%; height: 100px;" />
 			</div>
 			<div id="songshui" class="col-xs-3" style="text-align: center;">
-				<img src="img/8.jpg" style="width: 60%; height: 100px;" />
+				<img src="../img/8.jpg" style="width: 60%; height: 100px;" />
 			</div>
 		</div>
 
@@ -188,7 +188,7 @@
 						style="position: relative; height: 290px; width: 100%; overflow: hidden;">
 						<div class="col-xs-3"
 							style="background-color:; height: 290px; text-align: center;">
-							<img src="img/快递.png" style="width: 80%; height: 80%;" />
+							<img src="../img/快递.png" style="width: 80%; height: 80%;" />
 						</div>
 						<div class="col-xs-9" style="height: 290px;">
 
@@ -242,7 +242,7 @@
 						style="position: relative; height: 60px; width: 100%; font-size: 40px;">
 						闪电校园旗下>></div>
 					<div class="col-xs-3" style="height: 300px; text-align: center;">
-						<br /> <img src="img/makesi.jpg" style="width: 80%; height: 80%;" />
+						<br /> <img src="../img/makesi.jpg" style="width: 80%; height: 80%;" />
 					</div>
 					<div class="col-xs-9"
 						style="height: 300px; border:; border-radius: 25px;">
@@ -273,7 +273,7 @@
 						style="position: relative; height: 60px; width: 100%; font-size: 40px;">
 						闪电校园旗下>></div>
 					<div class="col-xs-3" style="height: 300px; text-align: center;">
-						<br /> <img src="img/会员.png" style="width: 80%; height: 80%;" />
+						<br /> <img src="../img/会员.png" style="width: 80%; height: 80%;" />
 					</div>
 					<div class="col-xs-9"
 						style="height: 300px; border:; border-radius: 25px;">
@@ -298,7 +298,7 @@
 						style="position: relative; height: 60px; width: 100%; font-size: 40px;">
 						闪电校园旗下>></div>
 					<div class="col-xs-3" style="height: 300px; text-align: center;">
-						<br /> <img src="img/free.png" style="width: 80%; height: 80%;" />
+						<br /> <img src="../img/free.png" style="width: 80%; height: 80%;" />
 					</div>
 					<div class="col-xs-9"
 						style="height: 300px; border:; border-radius: 25px;">
@@ -330,18 +330,18 @@
 			style="height:80px;background-color: ;border-color:white;position: fixed;">
 		<div class="col-xs-4"
 			style="text-align: center; background-color: white;">
-			<img src="img/首页.jpg"
+			<img src="../img/首页.jpg"
 				style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px; padding: 0px;" />
 
 		</div>
 		<div id="dingdan" class="col-xs-4"
 			style="text-align: center; background-color: white;">
-			<img src="img/订单.jpg"
+			<img src="../img/订单.jpg"
 				style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px;" />
 		</div>
 		<div id="wode" class="col-xs-4"
 			style="text-align: center; background-color: white;">
-			<img src="img/我的.jpg"
+			<img src="../img/我的.jpg"
 				style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px;" />
 		</div>
 		</nav>
@@ -353,19 +353,19 @@
 	var but1 = document.getElementById("wode");
 	var but2 = document.getElementById("dingdan");
 	but2.onclick = function() {
-		window.location.href = "view/orderManage.jsp";
+		window.location.href = "../view/orderManage.jsp";
 	}
 	but1.onclick = function() {
-		window.location.href = "view/my.jsp";
+		window.location.href = "../view/my.jsp";
 	}
 	var photo1 = document.getElementById("daiqu");
 	photo1.onclick = function() {
-		window.location.href = "view/fetch.jsp";
+		window.location.href = "../view/fetch.jsp";
 	}
 	var photo2 = document.getElementById("daiji");
 	photo2.onclick = function() {
 		//window.location.href = "${pageContext.request.contextPath}/consign/up";
-		window.location.href = "view/consign.jsp";
+		window.location.href = "../view/consign.jsp";
 	}
 	/* function hello(){
 		var btn9 = document.getElementById("daiji");
@@ -391,7 +391,7 @@
 	}
 	var photo6 = document.getElementById("kabao");
 	photo6.onclick = function() {
-		window.location.href = "view/myTicket.jsp";
+		window.location.href = "../view/myTicket.jsp";
 	}
 	var photo7 = document.getElementById("jiaoyu");
 	var photo8 = document.getElementById("songshui");
