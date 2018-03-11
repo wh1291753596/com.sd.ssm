@@ -20,7 +20,7 @@
 	});
 </script>
 </head>
-<body>
+<body onload="creatTable()">
 	<div class="hidden-lg hidden-md"
 		style="position: absolute; top: 0px; width: 100%; background-color: bisque;">
 		<form role="form"
@@ -64,12 +64,9 @@
 			</div>
 
 			<div id="price" class="form-group" style="display: none;">
-				<label class="alert-warning"
-					style="text-align: left; background-color: bisque;"><h1>
-						价目 说明：<br>
-					</h1></label>
-				<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+以下为首重+续重方式</h2>
-				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以下为首重+续重方式</h3>
+				
+				
+				<div id="messages" style="font-size: 50px;"></div>
 			</div>
 			<div class="form-group">
 				<label class="alert-success"
@@ -137,4 +134,32 @@
 
 	</div>
 </body>
+<script type="text/javascript">
+	var str_json;
+	var table = "";
+	var a = decodeURI(location.href);
+	if (a.indexOf("?") != -1) {
+		str_json = eval(a.substr(a.indexOf("?") + 1));
+	}
+	function creatTable() {
+		//制作表头
+		table += "<div class='table-responsive'>"
+				+ "<table class='table text-nowrap'>" + "<thead>" + " <tr>";
+		for (var i = 0; i < 1; i++) {
+			for ( var key in str_json[i]) {
+				table += "  <th>" + key + "</th>"
+			}
+		}
+		table += "</tr></thead><tbody>";
+		for (var i = 0; i < str_json.length; i++) {
+			table += "<tr>";
+			for ( var key in str_json[i]) {
+				table += "<td> " + str_json[i][key] + " </td>"
+			}
+			table += "</tr>";
+		}
+		table += "</tbody></table></div>";
+		document.getElementById("messages").innerHTML = table;
+	}
+</script>
 </html>
