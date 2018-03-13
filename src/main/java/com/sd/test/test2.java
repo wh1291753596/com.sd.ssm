@@ -8,7 +8,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.sd.dao.UserMapper;
+
 /*
  * 娴嬭瘯dao灞傚伐浣�
  * 
@@ -23,7 +23,7 @@ import com.sd.dao.UserMapper;
 @WebAppConfiguration
 @ContextConfiguration(locations = { "classpath:applicationContext.xml" })
 public class test2 {
-	@Autowired
+/*	@Autowired
 	UserMapper userMapper;
 	
 	@Test
@@ -33,5 +33,5 @@ public class test2 {
 
 		//userMapper.insert(new com.sd.bean.User("5555", "helo", 15, "985"));
 	}
-
+*/
 }

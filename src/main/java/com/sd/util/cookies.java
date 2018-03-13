@@ -18,7 +18,7 @@ public class cookies {
 		Cookie[] cookies = request.getCookies();
 		for (Cookie cookie : cookies) {
 			cookiename = cookie.getName();
-			if ("usernameandpassword".equals(cookiename)) {
+			if ("shandianxiaoyuan".equals(cookiename)) {
 				System.out.println(cookiename);
 				cookievalues = cookie.getValue();
 				System.out.println(cookievalues);

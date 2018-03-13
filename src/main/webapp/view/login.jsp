@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -36,14 +37,17 @@
 			</div>
 			<form class="form-signin" role="form" onsubmit="return formCheck()"
 				action="${pageContext.request.contextPath}/login/up" method="post">
-				<input type="text" name="username" class="form-control" placeholder="用户名" required
-					autofocus /> 
-				<input type="password" name="password" class="form-control"
-					placeholder="密码" required />
+				<input type="text" name="username" class="form-control"
+					placeholder="用户名" required autofocus /> <input type="password"
+					name="password" class="form-control" placeholder="密码" required />
 				<button class="btn btn-lg btn-warning btn-block" type="submit">登录</button>
 				<button id="register" class="btn btn-lg btn-warning btn-block">注册</button>
 				<br> <a href="" style="color: red;">忘记密码？</a>
-
+				<div style="color: red;">
+					<c:forEach items="${testresultinfo}" var="list">
+						<p>${list}</p>
+					</c:forEach>
+				</div>
 			</form>
 		</div>
 	</div>

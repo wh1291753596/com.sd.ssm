@@ -38,7 +38,7 @@
 		</javaClientGenerator>
 
 		<!-- 对应每个表 -->
-		<table tableName="Temp" domainObjectName="Temp"/>
-
+		
+		<table tableName="user" domainObjectName="user"/>		
 	</context>
 </generatorConfiguration>
