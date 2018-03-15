@@ -20,7 +20,6 @@
 	$(document)
 			.ready(
 					function() {
-
 						$("#btn").click(function() {
 							$("#shuju").table2excel({
 								exclude : ".noExl",

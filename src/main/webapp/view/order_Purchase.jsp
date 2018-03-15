@@ -76,7 +76,9 @@
 						<span style="font-size: -webkit-xxx-large; color: red;"><b>￥0.00</b></span>
 					</div>
 				</div>
-
+				<div style="display: none;">
+					<input name="kaquanid" type="text" value="ID值：" />
+				</div>
 				<div class="form-group"
 					style="height: 140px; border:; border-radius: 10px;">
 					<h2>

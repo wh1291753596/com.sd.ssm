@@ -262,6 +262,9 @@
 							<span id="xianjia"
 								style="font-size: -webkit-xxx-large; color: red;"><b>￥4.00</b></span>
 						</div>
+						<div style="display: none;">
+								<input name="tushusid" type="text" value="ID值：" />
+						</div>
 					</div>
 				</div>
 
@@ -289,6 +292,9 @@
 							<br /> <span
 								style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
 							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥0.00</b></span>
+						</div>
+						<div style="display: none;">
+								<input name="fulisid" type="text" value="ID值：" />
 						</div>
 					</div>
 				</div>

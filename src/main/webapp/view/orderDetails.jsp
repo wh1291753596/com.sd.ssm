@@ -17,17 +17,14 @@
 		style="position: absolute; top: 0px; width: 100%; background-color: bisque;">
 		<form role="form">
 			<div style="text-align: center;">
-				<br /> <br /> <br /> <br /> <img src="../img/151843658168549.png"
-					style="width: 60%;" />
+				<br /> <br /> <br /> <br /> <img
+					src="../img/151843658168549.png" style="width: 60%;" />
 			</div>
 			<br /> <br /> <br /> <br />
 			<div class="form-group"
 				style="width: 98%; height: 350px; background-image: url(../img/17ab041d54a1916d3148d9f9f4b76c14.jpg);">
 				<div class="col-xs-8" style="text-align: left;">
-					<br />
-					<br />
-					<br />
-					<br />
+					<br /> <br /> <br /> <br />
 					<h1 style="font-family: '楷体';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交易成功</h1>
 					<br />
 					<h1 style="font-family: '楷体';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎下次继续使用</h1>
@@ -43,31 +40,22 @@
 			<div class="form-group"
 				style="height: 260px; border: groove; border-radius: 25px;">
 				<div class="col-xs-1" style="text-align: center; height: 160px;">
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br /> <img src="../img/地址.png" />
+					<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <img
+						src="../img/地址.png" />
 
 				</div>
 				<div class="col-xs-11">
 					<div id="" style="float: left; height: 60px; background-color:;">
-						<br />
-						<br />
+						<br /> <br />
 						<h1 style="color: orange; font-family: '楷体';">&nbsp;收件人：王浩</h1>
 
 					</div>
 					<div id="" style="float: right; height: 60px;">
-						<br />
-						<br />
+						<br /> <br />
 						<h1 style="color: crimson;">18160072938</h1>
 					</div>
 					<div style="position: absolute; top: 60px; font-family: times;">
-						<br />
-						<br />
+						<br /> <br />
 						<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收货地址：四川省成都市温江区四川农业大学</h3>
 						<br />
 						<h2 style="font-family: '黑体';">
@@ -75,48 +63,40 @@
 						</h2>
 					</div>
 					<div style="right: 50px; position: absolute;">
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
+						<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 						<h1 style="color: orange; font-family:;">&nbsp;￥x.xx</h1>
 					</div>
 				</div>
 			</div>
 			<h2 class="page-header" style="color: red;">&nbsp;&nbsp;&nbsp;&nbsp;</h2>
 			<div class="form-group"
-					style="height: 350px; border: groove; border-radius: 5px;">
-					<div
-						style="position: relative; height: 60px; width: 100%;font-size: 40px;">
-						闪电校园旗下>></div>
-					<div
-						style="position: relative; height: 290px; width: 100%;overflow: hidden;">
-						<div class="col-xs-3"
-							style="background-color:; height: 290px; text-align: center;">
-							<img src="../img/快递.png" style="width: 80%; height: 80%;" />
-						</div>
-						<div class="col-xs-9" style="height: 290px;">
+				style="height: 350px; border: groove; border-radius: 5px;">
+				<div
+					style="position: relative; height: 60px; width: 100%; font-size: 40px;">
+					闪电校园旗下>></div>
+				<div
+					style="position: relative; height: 290px; width: 100%; overflow: hidden;">
+					<div class="col-xs-3"
+						style="background-color:; height: 290px; text-align: center;">
+						<img src="../img/快递.png" style="width: 80%; height: 80%;" />
+					</div>
+					<div class="col-xs-9" style="height: 290px;">
 
-							<div class="col-xs-9"
-								style="text-align: left; font-size: 50px; font-family: '楷体'; color: blueviolet;">
-								<br /> <b>闪电代取</b> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--闪电侠配送
-							</div>
-							<div class="col-xs-3"
-								style=" text-align: right;">
-								<br />
-								<br />
-								<br />
-								<br /> <span
-									style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
-								<span style="font-size: -webkit-xxx-large; color: red;"><b>￥1.90</b></span>
-							</div>
+						<div class="col-xs-9"
+							style="text-align: left; font-size: 50px; font-family: '楷体'; color: blueviolet;">
+							<br /> <b>闪电代取</b> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--闪电侠配送
+						</div>
+						<div class="col-xs-3" style="text-align: right;">
+							<br /> <br /> <br /> <br /> <span
+								style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
+							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥1.90</b></span>
 						</div>
 					</div>
 				</div>
+				<div style="display: none;">
+					<input name="kaquanid" type="text" value="ID值：" />
+				</div>
+			</div>
 			<div class="form-group"
 				style="height: 70px; border: groove; border-radius: 10px;">
 				<button
