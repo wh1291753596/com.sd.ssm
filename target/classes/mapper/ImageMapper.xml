@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sd.dao.UserMapper">
-  <resultMap id="BaseResultMap" type="com.sd.bean.User">
+<mapper namespace="com.sd.dao.ImageMapper">
+  <resultMap id="BaseResultMap" type="com.sd.bean.Image">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="login_time" jdbcType="TIMESTAMP" property="loginTime" />
-    <result column="default_address_id" jdbcType="INTEGER" property="defaultAddressId" />
-    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="path" jdbcType="VARCHAR" property="path" />
+    <result column="width" jdbcType="SMALLINT" property="width" />
+    <result column="height" jdbcType="SMALLINT" property="height" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
@@ -72,16 +69,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, nickname, phone, password, login_time, default_address_id, type, create_time, 
-    update_time
+    id, name, path, width, height, create_time, update_time
   </sql>
-  <select id="selectByExample" parameterType="com.sd.bean.UserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.sd.bean.ImageExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from user
+    from image
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -92,31 +88,29 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from user
+    from image
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from user
+    delete from image
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.sd.bean.UserExample">
-    delete from user
+  <delete id="deleteByExample" parameterType="com.sd.bean.ImageExample">
+    delete from image
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.sd.bean.User">
-    insert into user (id, name, nickname, 
-      phone, password, login_time, 
-      default_address_id, type, create_time, 
+  <insert id="insert" parameterType="com.sd.bean.Image">
+    insert into image (id, name, path, 
+      width, height, create_time, 
       update_time)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{loginTime,jdbcType=TIMESTAMP}, 
-      #{defaultAddressId,jdbcType=INTEGER}, #{type,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, 
+      #{width,jdbcType=SMALLINT}, #{height,jdbcType=SMALLINT}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.sd.bean.User">
-    insert into user
+  <insert id="insertSelective" parameterType="com.sd.bean.Image">
+    insert into image
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -124,23 +118,14 @@
       <if test="name != null">
         name,
       </if>
-      <if test="nickname != null">
-        nickname,
+      <if test="path != null">
+        path,
       </if>
-      <if test="phone != null">
-        phone,
+      <if test="width != null">
+        width,
       </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="loginTime != null">
-        login_time,
-      </if>
-      <if test="defaultAddressId != null">
-        default_address_id,
-      </if>
-      <if test="type != null">
-        type,
+      <if test="height != null">
+        height,
       </if>
       <if test="createTime != null">
         create_time,
@@ -156,23 +141,14 @@
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="nickname != null">
-        #{nickname,jdbcType=VARCHAR},
+      <if test="path != null">
+        #{path,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null">
-        #{phone,jdbcType=VARCHAR},
+      <if test="width != null">
+        #{width,jdbcType=SMALLINT},
       </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="loginTime != null">
-        #{loginTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="defaultAddressId != null">
-        #{defaultAddressId,jdbcType=INTEGER},
-      </if>
-      <if test="type != null">
-        #{type,jdbcType=TINYINT},
+      <if test="height != null">
+        #{height,jdbcType=SMALLINT},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
@@ -182,14 +158,14 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.sd.bean.UserExample" resultType="java.lang.Long">
-    select count(*) from user
+  <select id="countByExample" parameterType="com.sd.bean.ImageExample" resultType="java.lang.Long">
+    select count(*) from image
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update user
+    update image
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
@@ -197,23 +173,14 @@
       <if test="record.name != null">
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.nickname != null">
-        nickname = #{record.nickname,jdbcType=VARCHAR},
+      <if test="record.path != null">
+        path = #{record.path,jdbcType=VARCHAR},
       </if>
-      <if test="record.phone != null">
-        phone = #{record.phone,jdbcType=VARCHAR},
+      <if test="record.width != null">
+        width = #{record.width,jdbcType=SMALLINT},
       </if>
-      <if test="record.password != null">
-        password = #{record.password,jdbcType=VARCHAR},
-      </if>
-      <if test="record.loginTime != null">
-        login_time = #{record.loginTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.defaultAddressId != null">
-        default_address_id = #{record.defaultAddressId,jdbcType=INTEGER},
-      </if>
-      <if test="record.type != null">
-        type = #{record.type,jdbcType=TINYINT},
+      <if test="record.height != null">
+        height = #{record.height,jdbcType=SMALLINT},
       </if>
       <if test="record.createTime != null">
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -227,44 +194,32 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update user
+    update image
     set id = #{record.id,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
-      nickname = #{record.nickname,jdbcType=VARCHAR},
-      phone = #{record.phone,jdbcType=VARCHAR},
-      password = #{record.password,jdbcType=VARCHAR},
-      login_time = #{record.loginTime,jdbcType=TIMESTAMP},
-      default_address_id = #{record.defaultAddressId,jdbcType=INTEGER},
-      type = #{record.type,jdbcType=TINYINT},
+      path = #{record.path,jdbcType=VARCHAR},
+      width = #{record.width,jdbcType=SMALLINT},
+      height = #{record.height,jdbcType=SMALLINT},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sd.bean.User">
-    update user
+  <update id="updateByPrimaryKeySelective" parameterType="com.sd.bean.Image">
+    update image
     <set>
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="nickname != null">
-        nickname = #{nickname,jdbcType=VARCHAR},
+      <if test="path != null">
+        path = #{path,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null">
-        phone = #{phone,jdbcType=VARCHAR},
+      <if test="width != null">
+        width = #{width,jdbcType=SMALLINT},
       </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="loginTime != null">
-        login_time = #{loginTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="defaultAddressId != null">
-        default_address_id = #{defaultAddressId,jdbcType=INTEGER},
-      </if>
-      <if test="type != null">
-        type = #{type,jdbcType=TINYINT},
+      <if test="height != null">
+        height = #{height,jdbcType=SMALLINT},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -275,15 +230,12 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sd.bean.User">
-    update user
+  <update id="updateByPrimaryKey" parameterType="com.sd.bean.Image">
+    update image
     set name = #{name,jdbcType=VARCHAR},
-      nickname = #{nickname,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      login_time = #{loginTime,jdbcType=TIMESTAMP},
-      default_address_id = #{defaultAddressId,jdbcType=INTEGER},
-      type = #{type,jdbcType=TINYINT},
+      path = #{path,jdbcType=VARCHAR},
+      width = #{width,jdbcType=SMALLINT},
+      height = #{height,jdbcType=SMALLINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}

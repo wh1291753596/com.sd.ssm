@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.UserCouponServiceMapper">
+	<resultMap id="BaseResultMap" type="com.sd.bean.UserCouponServicePojo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="money" jdbcType="DECIMAL" property="money" />
+    <result column="min_money" jdbcType="DECIMAL" property="minMoney" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="issued_quantity" jdbcType="INTEGER" property="issuedQuantity" />
+    <result column="receive_quantity" jdbcType="INTEGER" property="receiveQuantity" />
+    <result column="image_id" jdbcType="INTEGER" property="imageId" />
+    <result column="flag" jdbcType="TINYINT" property="flag" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    coupon.id, coupon.name, coupon.description, coupon.money, coupon.min_money, coupon.type, coupon.start_time, coupon.end_time, coupon.issued_quantity, 
+    coupon.receive_quantity, coupon.image_id, coupon.flag, coupon.create_time, coupon.update_time
+  </sql>
+  <select id="selectCouponByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List"/> 
+  	from coupon 
+  	inner join user_coupon on coupon.id = user_coupon.coupons_id and user_coupon.user_id=#{coupons_id,jdbcType=INTEGER}
+    inner join `user` on user_coupon.user_id=`user`.id 
+  </select>
+  
+</mapper>	

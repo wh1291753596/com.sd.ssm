@@ -26,7 +26,9 @@
 					<br />
 					<br />
 					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>兼职名称：<br></h1></label>
-					<input type="text" class="form-control" id="name" name="name" placeholder="10个字以内" style="height: 50px;font-size: x-large;">				
+					<input type="text" class="form-control" id="name" name="name" placeholder="10个字以内" style="height: 50px;font-size: x-large;">		
+					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>联系方式：<br></h1></label>
+					<input type="text" class="form-control" id="name" name="contact" placeholder="10个字以内" style="height: 50px;font-size: x-large;">						
 					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>兼职地点：<br></h1></label>
 					<input type="text" class="form-control" id="location" name="location" placeholder="10个字以内" style="height: 50px;font-size: x-large;">
 					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>兼职内容：<br></h1></label>

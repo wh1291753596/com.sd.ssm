@@ -20,9 +20,6 @@
 		$("#yishiyong").click(function() {
 			$("#yishiyongs").toggle(400);
 		});
-		$("#weiyongyou").click(function() {
-			$("#weiyongyous").toggle(400);
-		});
 	})
 </script>
 </head>
@@ -42,34 +39,68 @@
 					style="position: relative; height: 60px; width: 100%; background-color: violet; font-size: 40px;">
 					有效卡券>></div>
 			</div>
-			<div id="youxiaos" class="form-group"
-				style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove;">
-				<div
-					style="position: relative; height: 60px; width: 100%; background-color:; font-size: 40px;">
-					闪电校园旗下>></div>
-				<div class="col-xs-3"
-					style="background-color:; height: 300px; text-align: center;">
-					<br /> <img src="../img/会员.png" style="width: 80%; height: 80%;" />
-				</div>
-				<div class="col-xs-9"
-					style="background-color:; height: 300px; border:; border-radius: 25px;">
-					<br />
-					<div class="col-xs-9" style="text-align: left;">
-						<p style="font-size: 50px; font-family: '楷体'; color: brown;">闪电校园会员卡</p>
-						<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--闪电校园旗下业务不要钱！！！</p>
-						<p style="font-size: 35px;">月卡</p>
+			<div id="youxiaos">
+				<div class="form-group"
+					style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove;">
+					<div
+						style="position: relative; height: 60px; width: 100%; background-color:; font-size: 40px;">
+						闪电校园旗下>></div>
+					<div class="col-xs-3"
+						style="background-color:; height: 300px; text-align: center;">
+						<br /> <img src="../img/会员.png" style="width: 80%; height: 80%;" />
+					</div>
+					<div class="col-xs-9"
+						style="background-color:; height: 300px; border:; border-radius: 25px;">
+						<br />
+						<div class="col-xs-9" style="text-align: left;">
+							<p style="font-size: 50px; font-family: '楷体'; color: brown;">闪电校园会员卡</p>
+							<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--闪电校园旗下业务不要钱！！！</p>
+							<p style="font-size: 35px;">2018/03/16-2018/04/16</p>
+
+						</div>
+						<div class="col-xs-3"
+							style="background-color:; text-align: right;">
+							<!-- <br /> <span style="font-size: xx-large">X1</span> --> <br /> <br />
+							<br /> <span
+								style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
+							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥0.00</b></span>
+						</div>
 
 					</div>
-					<div class="col-xs-3" style="background-color:; text-align: right;">
-						<br /> <span style="font-size: xx-large">X1</span> <br /> <br />
-						<br /> <span
-							style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
-						<span style="font-size: -webkit-xxx-large; color: red;"><b>￥0.00</b></span>
+					<div style="display: none;">
+						<input name="kaquanid" type="text" value="ID值：" />
 					</div>
-
 				</div>
-				<div style="display: none;">
-					<input name="kaquanid" type="text" value="ID值：" />
+				<div class="form-group"
+					style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove;">
+					<div
+						style="position: relative; height: 60px; width: 100%; background-color:; font-size: 40px;">
+						闪电校园旗下>></div>
+					<div class="col-xs-3"
+						style="background-color:; height: 300px; text-align: center;">
+						<br /> <img src="../img/会员.png" style="width: 80%; height: 80%;" />
+					</div>
+					<div class="col-xs-9"
+						style="background-color:; height: 300px; border:; border-radius: 25px;">
+						<br />
+						<div class="col-xs-9" style="text-align: left;">
+							<p style="font-size: 50px; font-family: '楷体'; color: brown;">闪电校园会员卡</p>
+							<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--闪电校园旗下业务不要钱！！！</p>
+							<p style="font-size: 35px;">2018/03/16-2018/04/16</p>
+
+						</div>
+						<div class="col-xs-3"
+							style="background-color:; text-align: right;">
+							<!-- <br /> <span style="font-size: xx-large">X1</span> --> <br /> <br />
+							<br /> <span
+								style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
+							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥0.00</b></span>
+						</div>
+
+					</div>
+					<div style="display: none;">
+						<input name="kaquanid" type="text" value="ID值：" />
+					</div>
 				</div>
 			</div>
 
@@ -79,36 +110,68 @@
 					style="position: relative; height: 60px; width: 100%; background-color: violet; font-size: 40px;">
 					未拥有卡券>></div>
 			</div>
-
-			<div id="yishiyongs" class="form-group"
-				style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove; display: none;">
-				<div
-					style="position: relative; height: 60px; width: 100%; background-color:; font-size: 40px;">
-					闪电校园旗下>></div>
-				<div class="col-xs-3"
-					style="background-color:; height: 300px; text-align: center;">
-					<br /> <img src="../img/free.png" style="width: 80%; height: 80%;" />
-				</div>
-				<div class="col-xs-9"
-					style="background-color:; height: 300px; border:; border-radius: 25px;">
-					<br />
-					<div class="col-xs-9" style="text-align: left;">
-						<p style="font-size: 50px; font-family: '楷体'; color: brown;">闪电校园免单卡</p>
-						<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--闪电代取不要钱！！！</p>
-						<p style="font-size: 35px;">次卡</p>
+			<div id="yishiyongs" style="display: none;">
+				<div class="form-group"
+					style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove; ">
+					<div
+						style="position: relative; height: 60px; width: 100%; background-color:; font-size: 40px;">
+						闪电校园旗下>></div>
+					<div class="col-xs-3"
+						style="background-color:; height: 300px; text-align: center;">
+						<br /> <img src="../img/free.png"
+							style="width: 80%; height: 80%;" />
 					</div>
-					<div class="col-xs-3" style="background-color:; text-align: right;">
-						<br /> <span style="font-size: xx-large">X10</span> <br /> <br />
-						<br /> <span
-							style="text-decoration: line-through; font-size: xx-large;">￥20.50</span>
-						<span style="font-size: -webkit-xxx-large; color: red;"><b>￥0.00</b></span>
+					<div class="col-xs-9"
+						style="background-color:; height: 300px; border:; border-radius: 25px;">
+						<br />
+						<div class="col-xs-9" style="text-align: left;">
+							<p style="font-size: 50px; font-family: '楷体'; color: brown;">闪电校园免单卡</p>
+							<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--闪电代取不要钱！！！</p>
+							<p style="font-size: 35px;">2018/03/16-2018/04/16</p>
+						</div>
+						<div class="col-xs-3"
+							style="background-color:; text-align: right;">
+							<!-- <br /> <span style="font-size: xx-large">X10</span> --> <br /> <br />
+							<br /> <span
+								style="text-decoration: line-through; font-size: xx-large;">￥20.50</span>
+							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥0.00</b></span>
+						</div>
+					</div>
+					<div style="display: none;">
+						<input name="kaquanid" type="text" value="ID值：" />
 					</div>
 				</div>
-				<div style="display: none;">
-					<input name="kaquanid" type="text" value="ID值：" />
+				<div class="form-group"
+					style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove; display: none;">
+					<div
+						style="position: relative; height: 60px; width: 100%; background-color:; font-size: 40px;">
+						闪电校园旗下>></div>
+					<div class="col-xs-3"
+						style="background-color:; height: 300px; text-align: center;">
+						<br /> <img src="../img/free.png"
+							style="width: 80%; height: 80%;" />
+					</div>
+					<div class="col-xs-9"
+						style="background-color:; height: 300px; border:; border-radius: 25px;">
+						<br />
+						<div class="col-xs-9" style="text-align: left;">
+							<p style="font-size: 50px; font-family: '楷体'; color: brown;">闪电校园免单卡</p>
+							<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--闪电代取不要钱！！！</p>
+							<p style="font-size: 35px;">次卡</p>
+						</div>
+						<div class="col-xs-3"
+							style="background-color:; text-align: right;">
+							<!-- <br /> <span style="font-size: xx-large">X10</span> --> <br /> <br />
+							<br /> <span
+								style="text-decoration: line-through; font-size: xx-large;">￥20.50</span>
+							<span style="font-size: -webkit-xxx-large; color: red;"><b>￥0.00</b></span>
+						</div>
+					</div>
+					<div style="display: none;">
+						<input name="kaquanid" type="text" value="ID值：" />
+					</div>
 				</div>
 			</div>
-
 
 
 
