@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sd.dao.AddressMapper">
-  <resultMap id="BaseResultMap" type="com.sd.bean.Address">
+<mapper namespace="com.sd.dao.ParttimejobMapper">
+  <resultMap id="BaseResultMap" type="com.sd.bean.Parttimejob">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="user_id" jdbcType="INTEGER" property="userId" />
-    <result column="receiver" jdbcType="VARCHAR" property="receiver" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
     <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="wage" jdbcType="VARCHAR" property="wage" />
+    <result column="count" jdbcType="VARCHAR" property="count" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
     <result column="flag" jdbcType="TINYINT" property="flag" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="working_time" jdbcType="VARCHAR" property="workingTime" />
+    <result column="contact_way" jdbcType="VARCHAR" property="contactWay" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -71,15 +75,16 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    `id`, user_id, receiver, phone, area, detail, flag, create_time, update_time
+    id, name, location, detail, wage, count, start_time, end_time, flag, create_time, 
+    update_time, working_time, contact_way
   </sql>
-  <select id="selectByExample" parameterType="com.sd.bean.AddressExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.sd.bean.ParttimejobExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from address
+    from parttime_job
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -90,67 +95,57 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from address
+    from parttime_job
     where id = #{id,jdbcType=INTEGER}
   </select>
-  
-  <!-- 通过用户id查询默认收货地址 -->
-  <select id="selectDefaultAddressByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select a.id, a.user_id, a.receiver, a.phone, a.area, a.detail, a.flag, a.create_time, a.update_time
-    from address as a
-    right join `user` 
-    on a.user_id=`user`.id
-    where `user`.id = #{userId,jdbcType=INTEGER} and a.id=`user`.default_address_id
-  </select>
-  <!-- 根据用户id查询非默认收货地址 -->
-  <select id="selectNonDefaultAddressByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select a.id, a.user_id, a.receiver, a.phone, a.area, a.detail, a.flag, a.create_time, a.update_time
-    from address as a
-    right join `user` 
-    on a.user_id=`user`.id
-    where a.id!=`user`.default_address_id and `user`.id = #{userId,jdbcType=INTEGER}
-  </select>
-  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from address
+    delete from parttime_job
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.sd.bean.AddressExample">
-    delete from address
+  <delete id="deleteByExample" parameterType="com.sd.bean.ParttimejobExample">
+    delete from parttime_job
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.sd.bean.Address">
-    insert into address (id, user_id, receiver, 
-      phone, area, detail, 
-      flag, create_time, update_time
-      )
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{receiver,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, 
-      #{flag,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-      )
+  <insert id="insert" parameterType="com.sd.bean.Parttimejob">
+    insert into parttime_job (id, name, location, 
+      detail, wage, count, 
+      start_time, end_time, flag, 
+      create_time, update_time, working_time, 
+      contact_way)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, 
+      #{detail,jdbcType=VARCHAR}, #{wage,jdbcType=VARCHAR}, #{count,jdbcType=VARCHAR}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{flag,jdbcType=TINYINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{workingTime,jdbcType=VARCHAR}, 
+      #{contactWay,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.sd.bean.Address">
-    insert into address
+  <insert id="insertSelective" parameterType="com.sd.bean.Parttimejob">
+    insert into parttime_job
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
-      <if test="userId != null">
-        user_id,
+      <if test="name != null">
+        name,
       </if>
-      <if test="receiver != null">
-        receiver,
-      </if>
-      <if test="phone != null">
-        phone,
-      </if>
-      <if test="area != null">
-        area,
+      <if test="location != null">
+        location,
       </if>
       <if test="detail != null">
         detail,
+      </if>
+      <if test="wage != null">
+        wage,
+      </if>
+      <if test="count != null">
+        count,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="endTime != null">
+        end_time,
       </if>
       <if test="flag != null">
         flag,
@@ -161,25 +156,37 @@
       <if test="updateTime != null">
         update_time,
       </if>
+      <if test="workingTime != null">
+        working_time,
+      </if>
+      <if test="contactWay != null">
+        contact_way,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="userId != null">
-        #{userId,jdbcType=INTEGER},
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
       </if>
-      <if test="receiver != null">
-        #{receiver,jdbcType=VARCHAR},
-      </if>
-      <if test="phone != null">
-        #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="area != null">
-        #{area,jdbcType=VARCHAR},
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
       </if>
       <if test="detail != null">
         #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="wage != null">
+        #{wage,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null">
+        #{count,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="flag != null">
         #{flag,jdbcType=TINYINT},
@@ -190,34 +197,46 @@
       <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="workingTime != null">
+        #{workingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="contactWay != null">
+        #{contactWay,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.sd.bean.AddressExample" resultType="java.lang.Long">
-    select count(*) from address
+  <select id="countByExample" parameterType="com.sd.bean.ParttimejobExample" resultType="java.lang.Long">
+    select count(*) from parttime_job
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update address
+    update parttime_job
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.userId != null">
-        user_id = #{record.userId,jdbcType=INTEGER},
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.receiver != null">
-        receiver = #{record.receiver,jdbcType=VARCHAR},
-      </if>
-      <if test="record.phone != null">
-        phone = #{record.phone,jdbcType=VARCHAR},
-      </if>
-      <if test="record.area != null">
-        area = #{record.area,jdbcType=VARCHAR},
+      <if test="record.location != null">
+        location = #{record.location,jdbcType=VARCHAR},
       </if>
       <if test="record.detail != null">
         detail = #{record.detail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wage != null">
+        wage = #{record.wage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.count != null">
+        count = #{record.count,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startTime != null">
+        start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.endTime != null">
+        end_time = #{record.endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.flag != null">
         flag = #{record.flag,jdbcType=TINYINT},
@@ -228,43 +247,59 @@
       <if test="record.updateTime != null">
         update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.workingTime != null">
+        working_time = #{record.workingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactWay != null">
+        contact_way = #{record.contactWay,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update address
+    update parttime_job
     set id = #{record.id,jdbcType=INTEGER},
-      user_id = #{record.userId,jdbcType=INTEGER},
-      receiver = #{record.receiver,jdbcType=VARCHAR},
-      phone = #{record.phone,jdbcType=VARCHAR},
-      area = #{record.area,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      location = #{record.location,jdbcType=VARCHAR},
       detail = #{record.detail,jdbcType=VARCHAR},
+      wage = #{record.wage,jdbcType=VARCHAR},
+      count = #{record.count,jdbcType=VARCHAR},
+      start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      end_time = #{record.endTime,jdbcType=TIMESTAMP},
       flag = #{record.flag,jdbcType=TINYINT},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      working_time = #{record.workingTime,jdbcType=VARCHAR},
+      contact_way = #{record.contactWay,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sd.bean.Address">
-    update address
+  <update id="updateByPrimaryKeySelective" parameterType="com.sd.bean.Parttimejob">
+    update parttime_job
     <set>
-      <if test="userId != null">
-        user_id = #{userId,jdbcType=INTEGER},
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="receiver != null">
-        receiver = #{receiver,jdbcType=VARCHAR},
-      </if>
-      <if test="phone != null">
-        phone = #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="area != null">
-        area = #{area,jdbcType=VARCHAR},
+      <if test="location != null">
+        location = #{location,jdbcType=VARCHAR},
       </if>
       <if test="detail != null">
         detail = #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="wage != null">
+        wage = #{wage,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null">
+        count = #{count,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        end_time = #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="flag != null">
         flag = #{flag,jdbcType=TINYINT},
@@ -275,19 +310,29 @@
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="workingTime != null">
+        working_time = #{workingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="contactWay != null">
+        contact_way = #{contactWay,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sd.bean.Address">
-    update address
-    set user_id = #{userId,jdbcType=INTEGER},
-      receiver = #{receiver,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      area = #{area,jdbcType=VARCHAR},
+  <update id="updateByPrimaryKey" parameterType="com.sd.bean.Parttimejob">
+    update parttime_job
+    set name = #{name,jdbcType=VARCHAR},
+      location = #{location,jdbcType=VARCHAR},
       detail = #{detail,jdbcType=VARCHAR},
+      wage = #{wage,jdbcType=VARCHAR},
+      count = #{count,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
       flag = #{flag,jdbcType=TINYINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      working_time = #{workingTime,jdbcType=VARCHAR},
+      contact_way = #{contactWay,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

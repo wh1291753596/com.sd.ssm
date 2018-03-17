@@ -60,6 +60,7 @@ public class register {
 			uuUser.setCreateTime(now);			
 			iUserMapper.insertSelective(uuUser);
 			session.commit();
+			session.close();
 			System.out.println(uuUser);
 			return "login";
 			

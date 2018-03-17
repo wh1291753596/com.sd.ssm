@@ -15,7 +15,8 @@
 </head>
 <body>
 <div class="hidden-lg hidden-md" style="position: absolute;top: 0px;width: 100%; background-color: bisque;">
-			<form role="form">
+			<form role="form" action="${pageContext.request.contextPath}/parttimejob/job"
+					method="post">
 				<div style="height: 100px;width: 100%;background-color: blueviolet;text-align: left;">
 					<br />
 					<div id="return">
@@ -26,9 +27,7 @@
 					<br />
 					<br />
 					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>兼职名称：<br></h1></label>
-					<input type="text" class="form-control" id="name" name="name" placeholder="10个字以内" style="height: 50px;font-size: x-large;">		
-					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>联系方式：<br></h1></label>
-					<input type="text" class="form-control" id="name" name="contact" placeholder="10个字以内" style="height: 50px;font-size: x-large;">						
+					<input type="text" class="form-control" id="name" name="name" placeholder="10个字以内" style="height: 50px;font-size: x-large;">			
 					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>兼职地点：<br></h1></label>
 					<input type="text" class="form-control" id="location" name="location" placeholder="10个字以内" style="height: 50px;font-size: x-large;">
 					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>兼职内容：<br></h1></label>
@@ -38,9 +37,13 @@
 					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>兼职人数：<br></h1></label>
 					<input type="text" class="form-control" id="count" name="count" placeholder="10个字以内" style="height: 50px;font-size: x-large;">
 					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>开始时间：<br></h1></label>
-					<input type="text" class="form-control" id="start_time" name="start_time" placeholder="10个字以内" style="height: 50px;font-size: x-large;">
+					<input type="date" class="form-control" id="start_time" name="start_time" placeholder="10个字以内" style="height: 50px;font-size: x-large;">
 					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>结束时间：<br></h1></label>
-					<input type="text" class="form-control" id="end_time" name="end_time" placeholder="10个字以内" style="height: 50px;font-size: x-large;">
+					<input type="date" class="form-control" id="end_time" name="end_time" placeholder="10个字以内" style="height: 50px;font-size: x-large;">
+					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>上班天数：<br></h1></label>
+					<input type="text" class="form-control" id="workingtime" name="workingtime" placeholder="10个字以内" style="height: 50px;font-size: x-large;">			
+					<label class="alert-warning" style="text-align: left;background-color: bisque;"><h1>联系方式：<br></h1></label>
+					<input type="text" class="form-control" id="contact" name="contact" placeholder="10个字以内" style="height: 50px;font-size: x-large;">						
 				</div>
 				<br />
 				<br />			

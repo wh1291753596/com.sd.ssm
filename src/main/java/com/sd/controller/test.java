@@ -23,7 +23,7 @@ import com.sd.service.OrderManageTool;
 /*@RequestMapping("/consign")*/
 public class test {
 	int id=1;
-	//System.out.println("");
+
 	
 	@RequestMapping("/up")
 	public String test456(HttpServletRequest request,Model model) {
@@ -36,8 +36,7 @@ public class test {
 		for(AddressKeyInfo addressKeyInfo:addressKeyInfos)
 		{
 			System.out.println(addressKeyInfo.toString());
-		}
-		
+		}		
 		
 		model.addAttribute("mytest", addressKeyInfos);
 		System.out.println("???");

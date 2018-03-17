@@ -34,7 +34,8 @@
 		<mapper resource="mapper/TempMapper.xml" />
 		<mapper resource="mapper/UserCouponServiceMapper.xml" />
         <mapper resource="mapper/userMapper.xml"/>
-        
+        <mapper resource="mapper/ParttimejobMapper.xml"/>
+        <mapper resource="mapper/AddressMapper.xml"/>
        
         <!-- 名字相同的dao文件和xml文件放在一起可直接扫描 -->
  		 <!-- <package name="com.sd.dao"/> -->

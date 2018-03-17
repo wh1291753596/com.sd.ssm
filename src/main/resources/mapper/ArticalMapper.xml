@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sd.dao.AddressMapper">
-  <resultMap id="BaseResultMap" type="com.sd.bean.Address">
+<mapper namespace="com.sd.dao.ArticalMapper">
+  <resultMap id="BaseResultMap" type="com.sd.bean.Artical">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="user_id" jdbcType="INTEGER" property="userId" />
-    <result column="receiver" jdbcType="VARCHAR" property="receiver" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="area" jdbcType="VARCHAR" property="area" />
-    <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="publisher" jdbcType="VARCHAR" property="publisher" />
+    <result column="keywords" jdbcType="VARCHAR" property="keywords" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="flag" jdbcType="TINYINT" property="flag" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
@@ -71,15 +71,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    `id`, user_id, receiver, phone, area, detail, flag, create_time, update_time
+    id, title, publisher, keywords, content, flag, publish_time, create_time, update_time
   </sql>
-  <select id="selectByExample" parameterType="com.sd.bean.AddressExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.sd.bean.ArticalExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from address
+    from artical
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -90,70 +90,52 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from address
+    from artical
     where id = #{id,jdbcType=INTEGER}
   </select>
-  
-  <!-- 通过用户id查询默认收货地址 -->
-  <select id="selectDefaultAddressByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select a.id, a.user_id, a.receiver, a.phone, a.area, a.detail, a.flag, a.create_time, a.update_time
-    from address as a
-    right join `user` 
-    on a.user_id=`user`.id
-    where `user`.id = #{userId,jdbcType=INTEGER} and a.id=`user`.default_address_id
-  </select>
-  <!-- 根据用户id查询非默认收货地址 -->
-  <select id="selectNonDefaultAddressByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select a.id, a.user_id, a.receiver, a.phone, a.area, a.detail, a.flag, a.create_time, a.update_time
-    from address as a
-    right join `user` 
-    on a.user_id=`user`.id
-    where a.id!=`user`.default_address_id and `user`.id = #{userId,jdbcType=INTEGER}
-  </select>
-  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from address
+    delete from artical
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.sd.bean.AddressExample">
-    delete from address
+  <delete id="deleteByExample" parameterType="com.sd.bean.ArticalExample">
+    delete from artical
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.sd.bean.Address">
-    insert into address (id, user_id, receiver, 
-      phone, area, detail, 
-      flag, create_time, update_time
+  <insert id="insert" parameterType="com.sd.bean.Artical">
+    insert into artical (id, title, publisher, 
+      keywords, content, flag, 
+      publish_time, create_time, update_time
       )
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{receiver,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, 
-      #{flag,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{publisher,jdbcType=VARCHAR}, 
+      #{keywords,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{flag,jdbcType=TINYINT}, 
+      #{publishTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.sd.bean.Address">
-    insert into address
+  <insert id="insertSelective" parameterType="com.sd.bean.Artical">
+    insert into artical
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
-      <if test="userId != null">
-        user_id,
+      <if test="title != null">
+        title,
       </if>
-      <if test="receiver != null">
-        receiver,
+      <if test="publisher != null">
+        publisher,
       </if>
-      <if test="phone != null">
-        phone,
+      <if test="keywords != null">
+        keywords,
       </if>
-      <if test="area != null">
-        area,
-      </if>
-      <if test="detail != null">
-        detail,
+      <if test="content != null">
+        content,
       </if>
       <if test="flag != null">
         flag,
+      </if>
+      <if test="publishTime != null">
+        publish_time,
       </if>
       <if test="createTime != null">
         create_time,
@@ -166,23 +148,23 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="userId != null">
-        #{userId,jdbcType=INTEGER},
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
       </if>
-      <if test="receiver != null">
-        #{receiver,jdbcType=VARCHAR},
+      <if test="publisher != null">
+        #{publisher,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null">
-        #{phone,jdbcType=VARCHAR},
+      <if test="keywords != null">
+        #{keywords,jdbcType=VARCHAR},
       </if>
-      <if test="area != null">
-        #{area,jdbcType=VARCHAR},
-      </if>
-      <if test="detail != null">
-        #{detail,jdbcType=VARCHAR},
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
       </if>
       <if test="flag != null">
         #{flag,jdbcType=TINYINT},
+      </if>
+      <if test="publishTime != null">
+        #{publishTime,jdbcType=TIMESTAMP},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
@@ -192,35 +174,35 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.sd.bean.AddressExample" resultType="java.lang.Long">
-    select count(*) from address
+  <select id="countByExample" parameterType="com.sd.bean.ArticalExample" resultType="java.lang.Long">
+    select count(*) from artical
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update address
+    update artical
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.userId != null">
-        user_id = #{record.userId,jdbcType=INTEGER},
+      <if test="record.title != null">
+        title = #{record.title,jdbcType=VARCHAR},
       </if>
-      <if test="record.receiver != null">
-        receiver = #{record.receiver,jdbcType=VARCHAR},
+      <if test="record.publisher != null">
+        publisher = #{record.publisher,jdbcType=VARCHAR},
       </if>
-      <if test="record.phone != null">
-        phone = #{record.phone,jdbcType=VARCHAR},
+      <if test="record.keywords != null">
+        keywords = #{record.keywords,jdbcType=VARCHAR},
       </if>
-      <if test="record.area != null">
-        area = #{record.area,jdbcType=VARCHAR},
-      </if>
-      <if test="record.detail != null">
-        detail = #{record.detail,jdbcType=VARCHAR},
+      <if test="record.content != null">
+        content = #{record.content,jdbcType=VARCHAR},
       </if>
       <if test="record.flag != null">
         flag = #{record.flag,jdbcType=TINYINT},
+      </if>
+      <if test="record.publishTime != null">
+        publish_time = #{record.publishTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.createTime != null">
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -234,40 +216,40 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update address
+    update artical
     set id = #{record.id,jdbcType=INTEGER},
-      user_id = #{record.userId,jdbcType=INTEGER},
-      receiver = #{record.receiver,jdbcType=VARCHAR},
-      phone = #{record.phone,jdbcType=VARCHAR},
-      area = #{record.area,jdbcType=VARCHAR},
-      detail = #{record.detail,jdbcType=VARCHAR},
+      title = #{record.title,jdbcType=VARCHAR},
+      publisher = #{record.publisher,jdbcType=VARCHAR},
+      keywords = #{record.keywords,jdbcType=VARCHAR},
+      content = #{record.content,jdbcType=VARCHAR},
       flag = #{record.flag,jdbcType=TINYINT},
+      publish_time = #{record.publishTime,jdbcType=TIMESTAMP},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sd.bean.Address">
-    update address
+  <update id="updateByPrimaryKeySelective" parameterType="com.sd.bean.Artical">
+    update artical
     <set>
-      <if test="userId != null">
-        user_id = #{userId,jdbcType=INTEGER},
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
       </if>
-      <if test="receiver != null">
-        receiver = #{receiver,jdbcType=VARCHAR},
+      <if test="publisher != null">
+        publisher = #{publisher,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null">
-        phone = #{phone,jdbcType=VARCHAR},
+      <if test="keywords != null">
+        keywords = #{keywords,jdbcType=VARCHAR},
       </if>
-      <if test="area != null">
-        area = #{area,jdbcType=VARCHAR},
-      </if>
-      <if test="detail != null">
-        detail = #{detail,jdbcType=VARCHAR},
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
       </if>
       <if test="flag != null">
         flag = #{flag,jdbcType=TINYINT},
+      </if>
+      <if test="publishTime != null">
+        publish_time = #{publishTime,jdbcType=TIMESTAMP},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -278,14 +260,14 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sd.bean.Address">
-    update address
-    set user_id = #{userId,jdbcType=INTEGER},
-      receiver = #{receiver,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      area = #{area,jdbcType=VARCHAR},
-      detail = #{detail,jdbcType=VARCHAR},
+  <update id="updateByPrimaryKey" parameterType="com.sd.bean.Artical">
+    update artical
+    set title = #{title,jdbcType=VARCHAR},
+      publisher = #{publisher,jdbcType=VARCHAR},
+      keywords = #{keywords,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
       flag = #{flag,jdbcType=TINYINT},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}

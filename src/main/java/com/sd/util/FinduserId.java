@@ -6,6 +6,11 @@ import com.sd.bean.user;
 import com.sd.dao.userMapper;
 import com.sd.service.SqlSessionTool;
 
+
+/*
+ * acthor:WangHao
+ * time：2018/03/17
+*/
 public class FinduserId
 {
 	public Integer getuserid(String username)

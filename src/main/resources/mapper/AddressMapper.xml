@@ -71,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, user_id, receiver, phone, area, detail, flag, create_time, update_time
+    `id`, user_id, receiver, phone, area, detail, flag, create_time, update_time
   </sql>
   <select id="selectByExample" parameterType="com.sd.bean.AddressExample" resultMap="BaseResultMap">
     select
@@ -93,6 +93,24 @@
     from address
     where id = #{id,jdbcType=INTEGER}
   </select>
+  
+  <!-- 通过用户id查询默认收货地址 -->
+  <select id="selectDefaultAddressByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select a.id, a.user_id, a.receiver, a.phone, a.area, a.detail, a.flag, a.create_time, a.update_time
+    from address as a
+    right join `user` 
+    on a.user_id=`user`.id
+    where `user`.id = #{userId,jdbcType=INTEGER} and a.id=`user`.default_address_id
+  </select>
+  <!-- 根据用户id查询非默认收货地址 -->
+  <select id="selectNonDefaultAddressByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select a.id, a.user_id, a.receiver, a.phone, a.area, a.detail, a.flag, a.create_time, a.update_time
+    from address as a
+    right join `user` 
+    on a.user_id=`user`.id
+    where a.id!=`user`.default_address_id and `user`.id = #{userId,jdbcType=INTEGER}
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from address
     where id = #{id,jdbcType=INTEGER}
