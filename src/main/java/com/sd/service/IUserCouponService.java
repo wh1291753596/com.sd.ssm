@@ -1,6 +1,8 @@
 package com.sd.service;
 
 import com.sd.bean.UserCoupon;
+import com.sd.bean.UserCouponServicePojo;
+
 import java.util.List;
 import com.sd.bean.Coupon;
 
@@ -15,5 +17,5 @@ public interface IUserCouponService {
 	//改
 	void updataCoupon(UserCoupon userCoupon);
 	//查
-	List<Coupon> selectCouponByUserId(Integer userID);
+	List<UserCouponServicePojo> selectCouponByUserId(Integer userID);
 }

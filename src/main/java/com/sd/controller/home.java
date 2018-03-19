@@ -1,20 +1,33 @@
 package com.sd.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.sd.bean.Parttimejob;
+import com.sd.service.IparttimejobService;
+import com.sd.service.imp.ParttimejobService;
+
 @Controller
 @RequestMapping("/home")
 public class home {
+	
 	@RequestMapping("/home")
 	public String testhome(HttpServletRequest request,Model model) {
-		String id=request.getParameter("tushusid");
-		String m=request.getParameter("m");
-		System.out.println(id);
-		System.out.println(m);
+		IparttimejobService pIparttimejobService = new ParttimejobService();
+		List<Parttimejob> parttimejobs=new ArrayList<Parttimejob>();				
+		parttimejobs=pIparttimejobService.select();
+		for(Parttimejob iParttimejob:parttimejobs)
+		{
+			System.out.println(iParttimejob.getName());
+		}
+		model.addAttribute("parttimejob", parttimejobs);
+				
 	return "home";
 	}
 	@RequestMapping("/sds")

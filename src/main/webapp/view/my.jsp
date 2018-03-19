@@ -6,60 +6,81 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>我的</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/sd_home.css" />
 <script
 	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script
 	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+	.header{
+		font-size: 50px;
+		font-family:  '黑体';
+		border-bottom: solid 2px #E7E7EB;
+	}	
+	.arrow{
+		float: right;
+		font-size: 50px;
+		color: #f2f2f2;
+		margin-top: 10px;
+	}
+	.menu{
+		background-color: white;top:20%;
+		padding-left: 5%;
+		padding-right: 5%;
+		position: absolute;
+		width: 100%; 
+	}
+	.no-border{
+		border: hidden;
+	}
+</style>
+
 </head>
-<body>
+<body style="background-color: #F2F2F3;">
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
-		style="height:100px;background-color:white ;border-color:white;">
-	<!--navbar-inverse 表示带反色（黑色背景，白色文字）的导航栏，navbar-fixed-top 表示 一直停留在顶部  添加 role="navigation"，有助于增加可访问性-->
-	<div id="photostyle">
-		<img src="../img/闪电速代.jpg" class="img-responsive" alt="SdCampus"
-			style="height: 100%; width: 100px;">
-	</div>
+		style="height:300px;background-color: #F2F2F3;border: hidden;">
+		<!--navbar-inverse 表示带反色（黑色背景，白色文字）的导航栏，navbar-fixed-top 表示 一直停留在顶部  添加 role="navigation"，有助于增加可访问性-->
+		<div id="photostyle">
+			<img src="../img/闪电速代灰色.jpg" class="img-responsive" alt="SdCampus"
+				style="height:300px; ">
+		</div>
 	</nav>
-	<div
-		style="top: 150px; position: absolute; width: 100%; border-style:;">
+	<!--菜单栏-->	
+	<div class="menu">
 		<div>
-			<p class="page-header" style="font-size: 60px; font-family: '楷体';">我的地址</p>
+			<p id="goAddress" class="page-header header" style="">我的地址<span class="glyphicon glyphicon glyphicon-menu-right arrow"></span></p>                         
 		</div>
 		<div>
-			<p class="page-header" style="font-size: 60px; font-family: '楷体';">我的卡券</p>
+			<p class="page-header header">我的卡券<span class="glyphicon glyphicon glyphicon-menu-right arrow"></span></p>
 		</div>
 		<div>
-			<p class="page-header" style="font-size: 60px; font-family: '楷体';">加入闪电</p>
+			<p class="page-header header">加入闪电<span class="glyphicon glyphicon glyphicon-menu-right arrow"></span></p>
 		</div>
 		<div>
-			<p class="page-header" style="font-size: 60px; font-family: '楷体';">吐槽程序</p>
+			<p class="page-header header">吐槽程序<span class="glyphicon glyphicon glyphicon-menu-right arrow"></span></p>
 		</div>
 		<div>
-			<p class="page-header" style="font-size: 60px; font-family: '楷体';">联系我们</p>
+			<p class="page-header header no-border">联系我们<span class="glyphicon glyphicon glyphicon-menu-right arrow"></span></p>
 		</div>
 
 	</div>
-	<nav class="navbar navbar-inverse navbar-fixed-bottom"
-		role="navigation"
-		style="height:80px;background-color: ;border-color:white;position: fixed;">
-	<div class="col-xs-4"
-		style="text-align: center; background-color: white;">
-		<img src="../img/首页.jpg"
-			style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px; padding: 0px;" />
-
+<nav class="navbar  navbar-fixed-bottom" role="navigation" style="height:100px;background-color: ;border-color:white;position: fixed;">
+	<div class="col-xs-4" style="text-align: center; background-color: white;padding: 3px;">
+		<img src="../img/首页.jpg" style=" height: 100%;width: 100%; " />
 	</div>
-	<div class="col-xs-4"
-		style="text-align: center; background-color: white;">
-		<img src="../img/订单.jpg"
-			style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px;" />
+	<div class="col-xs-4" style="text-align: center; background-color: white;padding: 3px;">
+		<img src="../img/订单.jpg" style="height: 100%;width: 100%; "/>
 	</div>
-	<div class="col-xs-4"
-		style="text-align: center; background-color: white;">
-		<img src="../img/我的.jpg"
-			style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px;" />
+	<div class="col-xs-4" style="text-align: center; background-color: white;padding: 3px;">
+		<img src="../img/我的.jpg" style="height: 100%;width: 100%; " />
 	</div>
-	</nav>
-
+</nav>
 </body>
+<script type="text/javascript">
+var goAddress = document.getElementById("goAddress");
+goAddress.onclick = function() {
+	window.location.href = "${pageContext.request.contextPath}/AddressManage/query";
+}
+</script>
 </html>

@@ -210,37 +210,36 @@
 				</form>
 			</div>
 			<div id="works" style="display: none;">
-				<form action="${pageContext.request.contextPath}/home/works?m=1"
-					method="post">
-					<div id="" class="form-group"
-						style="position: relative; height: 410px; width: 100%; overflow: hidden; border: groove;">
-						<div style="text-align: center;">
-							<p style="font-size: 50px; font-family: '楷体'; color: blueviolet;">曼得语言诚聘校园兼职</p>
+				<c:forEach items="${parttimejob}" var="list">
+					<form action="${pageContext.request.contextPath}/home/works?m=1"
+						method="post">
+						<div id="" class="form-group"
+							style="position: relative; width: 100%; overflow: hidden; border: groove;">
+							<div style="text-align: center;">
+								<p
+									style="font-size: 50px; font-family: '楷体'; color: blueviolet;">${list.name}</p>
+							</div>
+
+							<div class="col-xs-9" style="text-align: left;">
+								<p style="font-size: 35px; font-family: '宋体';">
+									${list.detail}<br /> ${list.workingTime}
+								</p>
+								<p style="font-size: 35px; font-family: '黑体'; color: red;">
+									<b>${list.wage}</b>
+								</p>
+								<p style="font-size: 35px;">${list.location}</p>
+								<p style="font-size: 25px; font-family: times;">${list.startTime}--${list.endTime}</p>
+							</div>
+							<div class="col-xs-3" style="text-align: right;">
+								<span style="font-size: xx-large;">人数需求</span> <br /> <br /> <span
+									style="font-size: -webkit-xxx-large; color: red;"><b>X${list.count}</b></span>								
+								<p style="font-size: 35px;">${list.contactWay}</p>							
+							</div>
 						</div>
-
-						<div class="col-xs-9" style="text-align: left;">
-							<p style="font-size: 35px; font-family: '宋体';">
-								学生助理:协助校园负责人安排校内工作;<br /> 兼职:负责协助学校内讲座开展，试听课，设点宣传，咨询，单页派发，下寝
-							</p>
-							<p style="font-size: 35px; font-family: '黑体'; color: red;">
-								<b>底薪+20/h+业绩提成</b>
-							</p>
-							<p style="font-size: 35px;">四川农业大学温江校区</p>
-							<p style="font-size: 25px; font-family: times;">2018/2/17-2018/2/18</p>
-						</div>
-						<div class="col-xs-3" style="text-align: right;">
-							<br /> <br /> <span style="font-size: xx-large;">人数需求</span> <br />
-							<br /> <br /> <br /> <span
-								style="font-size: -webkit-xxx-large; color: red;"><b>X10</b></span>
-
-							<br /> <br />
-							<button
-								style="background-color:; border: hidden; height: 60px; width: 200px; font-size: 35px; color: brown;">点击报名</button>
-
-						</div>
-
-					</div>
-				</form>
+						<br /> <br /> <br />
+					</form>
+					
+				</c:forEach>
 			</div>
 			<div id="tushus" style="display: none;">
 				<form action="${pageContext.request.contextPath}/home/tushus?m=2"
@@ -353,7 +352,7 @@
 
 		<br /> <br /> <br /> <br /> <br /> <br />
 
-		<nav class="navbar navbar-inverse navbar-fixed-bottom"
+		<nav class="navbar  navbar-fixed-bottom"
 			role="navigation"
 			style="height:80px;background-color: ;border-color:white;position: fixed;">
 		<div class="col-xs-4"

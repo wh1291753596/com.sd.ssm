@@ -2,6 +2,8 @@ package com.sd.dao;
 
 import com.sd.bean.Address;
 import com.sd.bean.AddressExample;
+
+import java.util.Date;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -19,6 +21,8 @@ public interface AddressMapper {
     List<Address> selectByExample(AddressExample example);
 
     Address selectByPrimaryKey(Integer id);
+    
+    Address selectByTime(Date createTime);
 
     int updateByExampleSelective(@Param("record") Address record, @Param("example") AddressExample example);
 

@@ -15,7 +15,7 @@
 <body>
 	<div class="hidden-lg hidden-md"
 		style="position: absolute; top: 0px; width: 100%; background-color: bisque;">
-		<form role="form">
+		<form role="form" action="${pageContext.request.contextPath}/Coupon/up" method="post" enctype="multipart/form-data" >
 			<div
 				style="height: 100px; width: 100%; background-color: blueviolet; text-align: left;">
 				<br />
@@ -48,7 +48,7 @@
 				<label class="alert-warning"
 					style="text-align: left; background-color: bisque;"><h1>
 						卡券数量：<br>
-					</h1></label> <input type="text" class="form-control" id="money" name="money"
+					</h1></label> <input type="text" class="form-control" id="number" name="number"
 					placeholder="10个字以内" style="height: 50px; font-size: x-large;">
 				<label class="alert-warning"
 					style="text-align: left; background-color: bisque;"><h1>

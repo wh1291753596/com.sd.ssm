@@ -16,6 +16,7 @@ import com.sd.bean.AddressKeyInfo;
 import com.sd.bean.Coupon;
 import com.sd.bean.Image;
 import com.sd.bean.Send;
+import com.sd.bean.UserCouponServicePojo;
 import com.sd.dao.SendMapper;
 import com.sd.dao.TempMapper;
 import com.sd.service.GetUserAddressKeyInfo;
@@ -83,7 +84,7 @@ public class TestAddressKeyInfo {
 	    couponServiceClass.creatCoupon(image, coupon);*/
 		
 		UserCouponServiceClass uServiceClass=new UserCouponServiceClass();
-		List<Coupon> coupons=uServiceClass.selectCouponByUserId(1);
+		List<UserCouponServicePojo> coupons=uServiceClass.selectCouponByUserId(1);
 		System.out.println("我执行完毕");
 	}
 

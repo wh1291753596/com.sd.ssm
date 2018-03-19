@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.sd.bean.Coupon;
 import com.sd.bean.UserCoupon;
+import com.sd.bean.UserCouponServicePojo;
 import com.sd.service.IUserCouponService;
 
 public class UserCouponServiceClass implements IUserCouponService {
@@ -33,7 +34,7 @@ public class UserCouponServiceClass implements IUserCouponService {
 	}
 
 	@Override
-	public List<Coupon> selectCouponByUserId(Integer userID) {
+	public List<UserCouponServicePojo> selectCouponByUserId(Integer userID) {
 		// TODO Auto-generated method stub
 		
 		Reader reader;
@@ -42,7 +43,9 @@ public class UserCouponServiceClass implements IUserCouponService {
 			// 创建
 			//创建执行对象
 			SqlSession session=new SqlSessionFactoryBuilder().build(reader).openSession();	
-			List<Coupon>coupons=session.selectList("mapper.UserCouponServiceMapper.selectCouponByUserId",userID);
+			
+			List<UserCouponServicePojo>coupons=session.selectList("mapper.UserCouponServiceMapper.selectCouponByUserId",userID);
+			session.close();
 			return coupons;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

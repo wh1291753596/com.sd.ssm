@@ -15,7 +15,7 @@ import com.sd.bean.Address;
  */
 public interface IAddressService {
 	/*
-	 * 根据用户获取该用户的所有非默认收货地址
+	 * 根据用户获取该用户的所有默认收货地址
 	 */
 	public Address GetdefaultAddressByUserId(int userId);
 	
@@ -23,6 +23,17 @@ public interface IAddressService {
 	 * 根据用户id获取该用户的所有非默认收货地址
 	 */
 	public List<Address> GetNondefaultAddressByUserId(int userId);
+	
+	/*
+	 * 根据用户的CREATTIME查询用户
+	 */
+	public Address selectByTime(Date creatTime);
+		
+	/*
+	 * 根据地址id查询地址
+	 */
+	public Address selectByAddressId(int addressId);
+		
 	
 	/*
 	 * 插入一条新纪录

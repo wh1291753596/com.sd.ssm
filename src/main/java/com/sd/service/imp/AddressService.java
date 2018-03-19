@@ -3,6 +3,7 @@
  */
 package com.sd.service.imp;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -39,6 +40,25 @@ public class AddressService implements IAddressService {
 		return addrresses;
 	}
 
+	@Override
+	public Address selectByTime(Date createTime)
+	{
+		SqlSession session = SqlSessionTool.CreateSqlSession();
+		Address addrress=session.selectOne("com.sd.dao.AddressMapper.selectByTime", createTime);
+		session.commit();
+		session.close();
+		return addrress;
+	}
+	
+	@Override
+	public  Address selectByAddressId(int addressId)
+	{
+		SqlSession session = SqlSessionTool.CreateSqlSession();
+		Address addrress=session.selectOne("com.sd.dao.AddressMapper.selectByAddressId", addressId);
+		session.commit();
+		session.close();
+		return addrress;
+	}
 	@Override
 	public int Insert(Address address) {
 		

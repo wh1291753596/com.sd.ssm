@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,87 +18,71 @@
 		style="position: absolute; top: 0px; width: 100%; background-color: bisque;">
 		<form role="form">
 			<div style="text-align: center;">
-				<br /> <br /> <br /> <br /> <img src="../img/151827704948161.png"
-					style="width: 60%;" />
+				<br /> <br /> <br /> <br /> <img
+					src="../img/151827704948161.png" style="width: 60%;" />
 			</div>
 			<br /> <br /> <br />
 			<!--这是地址信息-->
 			<div>
-				<div class="form-group"
-					style="height: 160px; border: groove; border-radius: 25px; border-width: thick;">
+				<c:forEach items="${defaultAddress}" var="list">
+					<div class="form-group"
+						style="height: 160px; border: groove; border-radius: 25px; border-width: thick;">
 
-					<div class="col-xs-10" style="text-align: left;">
-						<div id="" style="float: left; height: 60px; background-color:;">
-							<h1 style="color:; font-family: '楷体';">&nbsp;王浩</h1>
+						<div class="col-xs-10" style="text-align: left;">
+							<div id="" style="float: left; height: 60px; background-color:;">
+								<h1 style="color:; font-family: '楷体';">&nbsp;${list.receiver}</h1>
+							</div>
+							<div id="" style="float: right; height: 60px; background-color:;">
+								<h2>${list.phone}</h2>
+							</div>
+							<div style="position: absolute; top: 60px; background-color:;">
+								<h2>&nbsp;&nbsp;${list.area}--${list.detail}</h2>
+							</div>
 						</div>
-						<div id="" style="float: right; height: 60px; background-color:;">
-							<h2>18160072938</h2>
+						<div class="col-xs-2" style="text-align: right;">
+							<input id="show" name="judge" type="radio" value=""
+								style="height: 30px; width: 30px;" checked />
+							<h3>当前地址</h3>						
 						</div>
-						<div style="position: absolute; top: 60px; background-color:;">
-							<h2>&nbsp;&nbsp;四川省成都市四川农业大学(温江校区)学生公寓4-111</h2>
-
+						<div style="display: none;">
+								<input name="notdefalut" type="text" value="${list.id}" />
 						</div>
 					</div>
-					<div class="col-xs-2" style="text-align: right;">
-						<input id="show" name="judge" type="radio" value=""
-							style="height: 30px; width: 30px;" />
-						<h3>当前地址</h3>
-						<h3>编辑</h3>
-					</div>
-				</div>
-				<hr size="3" style="background-color: black;" />
+					<hr size="3" style="background-color: black;" />
+				</c:forEach>
 			</div>
 
 
 			<div>
-				<div class="form-group"
-					style="height: 160px; border: groove; border-radius: 25px; border-width: thick;">
-					<div class="col-xs-10" style="text-align: left;">
-						<div id="" style="float: left; height: 60px; background-color:;">
-							<h1 style="color:; font-family: '楷体';">&nbsp;王浩</h1>
+				<c:forEach items="${notdefaultAddress}" var="notdefaultAddresslist">
+					<div class="form-group"
+						style="height: 160px; border: groove; border-radius: 25px; border-width: thick;">
+						<div class="col-xs-10" style="text-align: left;">
+							<div id="" style="float: left; height: 60px; background-color:;">
+								<h1 style="color:; font-family: '楷体';">&nbsp;${notdefaultAddresslist.receiver}</h1>
+							</div>
+							<div id="" style="float: right; height: 60px; background-color:;">
+								<h2>${notdefaultAddresslist.phone}</h2>
+							</div>
+							<div style="position: absolute; top: 60px; background-color:;">
+								<h2>&nbsp;&nbsp;${notdefaultAddresslist.area}--${notdefaultAddresslist.detail}</h2>
+							</div>
 						</div>
-						<div id="" style="float: right; height: 60px; background-color:;">
-							<h2>18160072938</h2>
+						<div class="col-xs-2" style="text-align: right;">
+							<br><br><br><br>
+							
+							<h3><a href="${pageContext.request.contextPath}/AddressManage/revise?notdefalut=${notdefaultAddresslist.id}">编辑</a></h3>
 						</div>
-						<div style="position: absolute; top: 60px; background-color:;">
-							<h2>&nbsp;&nbsp;四川省成都市四川农业大学(温江校区)教师公寓29栋15楼302室</h2>
-
+						<div style="display: none;">
+								<input name="notdefalut" type="text" value="${notdefaultAddresslist.id}" />
 						</div>
 					</div>
-					<div class="col-xs-2" style="text-align: right;">
-						<input id="show" name="judge" type="radio" value=""
-							style="height: 30px; width: 30px;" />
-						<h3>当前地址</h3>
-						<h3>编辑</h3>
-					</div>
-				</div>
-				<hr size="3" style="background-color: black;" />
+					<hr size="3" style="background-color: black;" />
+				</c:forEach>
 			</div>
 
 
-			<div>
-				<div class="form-group"
-					style="height: 160px; border: groove; border-radius: 25px; border-width: thick;">
-					<div class="col-xs-10" style="text-align: left;">
-						<div id="" style="float: left; height: 60px; background-color:;">
-							<h1 style="color:; font-family: '楷体';">&nbsp;王浩</h1>
-						</div>
-						<div id="" style="float: right; height: 60px; background-color:;">
-							<h2>18160072938</h2>
-						</div>
-						<div style="position: absolute; top: 60px; background-color:;">
-							<h2>&nbsp;&nbsp;四川省成都市四川农业大学(温江校区)第四教学楼A栋三楼02室</h2>
-						</div>
-					</div>
-					<div class="col-xs-2" style="text-align: right;">
-						<input id="show" name="judge" type="radio" value=""
-							style="height: 30px; width: 30px;" />
-						<h3>当前地址</h3>
-						<h3>编辑</h3>
-					</div>
-				</div>
-				<hr size="3" style="background-color: black;" />
-			</div>
+		
 			<br /> <br /> <br /> <br />
 			<div style="text-align: center;">
 				<button type="submit" class="btn "

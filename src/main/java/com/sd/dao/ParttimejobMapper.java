@@ -18,6 +18,8 @@ public interface ParttimejobMapper {
 
     List<Parttimejob> selectByExample(ParttimejobExample example);
 
+    List<Parttimejob> selectAll();
+    
     Parttimejob selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") Parttimejob record, @Param("example") ParttimejobExample example);
