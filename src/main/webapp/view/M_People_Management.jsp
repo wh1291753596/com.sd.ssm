@@ -1,17 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>人员权限分配</title>
+<title>后台人员主页</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css" />
 <link rel="stylesheet" href="../css/sd_home.css" />
 <script
 	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script
 	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(document).ready(function() {
 
 		$('input[name="selectall"]').click(function() {
@@ -45,57 +46,48 @@
 			}
 		});
 	});
-</script>
+</script> -->
 </head>
 </head>
 <body>
 	<div class="hidden-lg hidden-md"
 		style="position: absolute; top: 0px; width: 100%;">
 		<form role="form">
-			<button type="button" class="btn btn-primary" data-toggle="modal"
-				data-target="#add"
-				style="width: 200px; height: 60px; font-size: 38px;">新增</button>
-			<button type="button" class="btn btn-success" data-toggle="modal"
-				data-target="#edit"
-				style="width: 200px; height: 60px; font-size: 38px;">编辑</button>
-			<button type="button" class="btn btn-danger"
-				style="width: 200px; height: 60px; font-size: 38px;">删除</button>
+			<div style="font-size: 30px;">
+				<label>用户名：</label> <input type="text" name="username">
+				<button id="query" type="button">查询</button>
+
+				<button id="add" type="button" style="float: right;">新增</button>
+			</div>
 
 			<table
 				class="table table-hover table-bordered table-responsive table-condensed">
 				<thead>
 					<tr style="font-size: xx-large;">
-						<th><input type="checkbox" name="selectDaiJiall"
-							style="width: 20px; height: 20px;" /></th>
-						<th>姓名</th>
-						<th>电话</th>
-						<th>账号(最好用qq号)</th>
+						<!-- <th><input type="checkbox" name="selectDaiJiall"
+							style="width: 20px; height: 20px;" /></th> -->
+						<th>用户名</th>
+						<th>真实姓名</th>
 						<th>密码</th>
-						<th>角色</th>
+						<th>电话</th>
+						<th>QQ</th>
 						<th>寝室</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr style="font-size: x-large;">
-						<th><input type="checkbox" name="stuDaiJiCheckBox"
-							style="width: 20px; height: 20px;" /></th>
-						<td>007</td>
-						<td>18168749587</td>
-						<td>6598742</td>
-						<td>123</td>
-						<td>1</td>
-						<td>4-3-206</td>
-					</tr>
-					<tr style="font-size: x-large;">
-						<th><input type="checkbox" name="stuDaiJiCheckBox"
-							style="width: 20px; height: 20px;" /></th>
-						<td>007</td>
-						<td>18168749587</td>
-						<td>6598742</td>
-						<td>123</td>
-						<td>1</td>
-						<td>4-3-206</td>
-					</tr>
+					<c:forEach items="${useramdin}" var="list">
+						<tr style="font-size: x-large;">
+							<!-- <th><input type="checkbox" name="stuDaiJiCheckBox"
+							style="width: 20px; height: 20px;" /></th> -->
+							<td>${list.userName}</td>
+							<td>${list.name}</td>
+							<td>${list.password}</td>
+							<td>${list.phone}</td>
+							<td>${list.qq}</td>
+							<td>${list.address}</td>
+						</tr>
+					</c:forEach>
+					
 				</tbody>
 			</table>
 			<div class="modal fade" id="add" aria-hidden="true">
@@ -151,7 +143,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="modal fade" id="edit" aria-hidden="true">
+			<!-- 	<div class="modal fade" id="edit" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -205,8 +197,18 @@
 					</div>
 				</div>
 
-			</div>
+			</div> -->
 		</form>
 	</div>
 </body>
+<script type="text/javascript">
+var query = document.getElementById("query");
+query.onclick = function() {
+	window.location.href = "../view/M_queryPeople.jsp";
+}
+var add = document.getElementById("add");
+add.onclick = function() {
+	window.location.href = "../view/M_addPeople.jsp";
+}
+</script>
 </html>

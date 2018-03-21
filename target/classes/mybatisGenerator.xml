@@ -39,6 +39,6 @@
 
 		<!-- 对应每个表 -->
 		
-		<table tableName="parttime_job" domainObjectName="Parttimejob"/>		
+		<table tableName="admin_user" domainObjectName="Admin_user"/>		
 	</context>
 </generatorConfiguration>

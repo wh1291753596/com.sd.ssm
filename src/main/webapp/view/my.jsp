@@ -6,7 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>我的</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css" />
-<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/sd_home.css" />
 <script
 	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -66,13 +65,13 @@
 
 	</div>
 <nav class="navbar  navbar-fixed-bottom" role="navigation" style="height:100px;background-color: ;border-color:white;position: fixed;">
-	<div class="col-xs-4" style="text-align: center; background-color: white;padding: 3px;">
+	<div id="home" class="col-xs-4" style="text-align: center; background-color: white;padding: 3px;">
 		<img src="../img/首页.jpg" style=" height: 100%;width: 100%; " />
 	</div>
-	<div class="col-xs-4" style="text-align: center; background-color: white;padding: 3px;">
+	<div id="dingdan" class="col-xs-4" style="text-align: center; background-color: white;padding: 3px;">
 		<img src="../img/订单.jpg" style="height: 100%;width: 100%; "/>
 	</div>
-	<div class="col-xs-4" style="text-align: center; background-color: white;padding: 3px;">
+	<div  class="col-xs-4" style="text-align: center; background-color: white;padding: 3px;">
 		<img src="../img/我的.jpg" style="height: 100%;width: 100%; " />
 	</div>
 </nav>
@@ -81,6 +80,14 @@
 var goAddress = document.getElementById("goAddress");
 goAddress.onclick = function() {
 	window.location.href = "${pageContext.request.contextPath}/AddressManage/query";
+}
+var but2 = document.getElementById("dingdan");
+but2.onclick = function() {
+	window.location.href = "${pageContext.request.contextPath}/AddressManage/query";
+}
+var home = document.getElementById("home");
+but2.onclick = function() {
+	window.location.href = "${pageContext.request.contextPath}/home/home";
 }
 </script>
 </html>

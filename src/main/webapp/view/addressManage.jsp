@@ -93,6 +93,27 @@
 
 			<br /> <br />
 		</form>
+		<nav class="navbar  navbar-fixed-bottom" role="navigation" style="height:100px;background-color: ;border-color:white;position: fixed;">
+	<div id="home" class="col-xs-4" style="text-align: center; background-color: white;padding: 3px;">
+		<img src="../img/首页.jpg" style=" height: 100%;width: 100%; " />
+	</div>
+	<div  class="col-xs-4" style="text-align: center; background-color: white;padding: 3px;">
+		<img src="../img/订单.jpg" style="height: 100%;width: 100%; "/>
+	</div>
+	<div id="my"  class="col-xs-4" style="text-align: center; background-color: white;padding: 3px;">
+		<img src="../img/我的.jpg" style="height: 100%;width: 100%; " />
+	</div>
+</nav>
 	</div>
 </body>
+<script type="text/javascript">
+var but2 = document.getElementById("my");
+but2.onclick = function() {
+	window.location.href = "../view/my.jsp";
+}
+var home = document.getElementById("home");
+but2.onclick = function() {
+	window.location.href = "${pageContext.request.contextPath}/home/home";
+}
+</script>
 </html>

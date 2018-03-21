@@ -1,14 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>管理端表单</title>
+<title>代寄快递后台页面</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css" />
 <link rel="stylesheet" href="../css/sd_home.css" />
 <script
@@ -127,59 +123,8 @@
 
 				</h2>
 			</div>
-
-			<table id="shuju"
-				class="table table-hover table-bordered table-responsive table-condensed"
-				style="display: ;">
-				<thead style="">
-					<tr style="font-size: xx-large;">
-						<th><input type="checkbox" name="selectall"
-							style="width: 20px; height: 20px;" /></th>
-						<th>公司</th>
-						<th>取货码</th>
-						<th>姓名</th>
-						<th>电话</th>
-						<th>地址</th>
-						<th>时间</th>
-						<th>备注</th>
-						<th>价格</th>
-					</tr>
-				</thead>
-				<tbody>
-
-					<tr style="font-size: x-large;">
-						<c:forEach items="${okok}" var="user">
-							<th><input type="checkbox" name="stuCheckBox"
-								style="width: 20px; height: 20px;" /></th>
-							<td>${user.name}</td>
-							<td>${user.shenfenzh }</td>
-							<td>${user.address }</td>
-							<td>18165584984</td>
-							<td>2-2-314</td>
-							<td>2018/2/17 22.39</td>
-							<td>麻烦给我早点送过来，我要出去，谢谢</td>
-							<td>1.9</td>
-						</c:forEach>
-
-					</tr>
-					<tr style="font-size: x-large;">
-						<th><input type="checkbox" name="stuCheckBox"
-							style="width: 20px; height: 20px;" /></th>
-						<td>中通</td>
-						<td>126524</td>
-						<td>王顺</td>
-						<td>18165584984</td>
-						<td>2-2-314</td>
-						<td>2018/2/17 22.39</td>
-						<td>麻烦给我早点送过来，我要出去，谢谢</td>
-						<td>1.9</td>
-					</tr>
-				</tbody>
-			</table>
-
 			<table
-				class="table table-hover table-bordered table-responsive table-condensed"
-				style="display:none;">
+				class="table table-hover table-bordered table-responsive table-condensed">
 				<thead style="">
 					<tr style="font-size: xx-large;">
 						<th><input type="checkbox" name="selectDaiJiall"
@@ -227,7 +172,6 @@
 					</tr>
 				</tbody>
 			</table>
-
 			<div class="form-group">
 				<h2>
 					<label for="name">更新到：</label> <select style="width: 200px;">
@@ -244,9 +188,7 @@
 				style="height: 80px;">
 				<h2>确认提交</h2>
 			</button>
-
 		</form>
 	</div>
-
 </body>
 </html>

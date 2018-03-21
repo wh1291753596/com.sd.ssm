@@ -34,17 +34,7 @@
 				<div class="col-xs-3" style="background-color:; text-align: right;">
 					<br /> <span id="num"
 						style="font-size: -webkit-xxx-large; color: red; display: none;"><b>取货码：12845</b></span>
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
+							
 					<br /> <span id="xianjia"
 						style="font-size: -webkit-xxx-large; color: red;"><b>接单需知：</b></span>
 					<span id="xianjia" style="font-size: xx-large; color: red;"><b>一旦接单</b></span><br />

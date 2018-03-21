@@ -208,6 +208,35 @@
 						</div>
 					</div>
 				</form>
+				<form action="${pageContext.request.contextPath}/home/sds?m=99"
+					method="post">
+					<div class="form-group"
+						style="height: 350px; border: groove; border-radius: 5px;">
+						<div
+							style="position: relative; height: 60px; width: 100%; font-size: 40px;">
+							闪电校园旗下>></div>
+						<div
+							style="position: relative; height: 290px; width: 100%; overflow: hidden;">
+							<div class="col-xs-3"
+								style="background-color:; height: 290px; text-align: center;">
+								<img src="../img/快递.png" style="width: 80%; height: 80%;" />
+							</div>
+							<div class="col-xs-9" style="height: 290px;">
+
+								<div class="col-xs-9"
+									style="text-align: left; font-size: 50px; font-family: '楷体'; color: blueviolet;">
+									<br /> <b>闪电代取</b> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--闪电侠配送
+								</div>
+								<div class="col-xs-3" style="text-align: right;">
+									<br /> <br /> <br /> <br /> <span
+										style="text-decoration: line-through; font-size: xx-large;">￥2.50</span>
+									<span style="font-size: -webkit-xxx-large; color: red;"><b>￥1.90</b></span>
+									<button class="btn  btn-warning btn-block" type="submit">购买</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
 			<div id="works" style="display: none;">
 				<c:forEach items="${parttimejob}" var="list">
@@ -380,7 +409,7 @@
 	var but1 = document.getElementById("wode");
 	var but2 = document.getElementById("dingdan");
 	but2.onclick = function() {
-		window.location.href = "../view/orderManage.jsp";
+		window.location.href = "${pageContext.request.contextPath}/AddressManage/query";
 	}
 	but1.onclick = function() {
 		window.location.href = "../view/my.jsp";
@@ -394,13 +423,7 @@
 		//window.location.href = "${pageContext.request.contextPath}/consign/up";
 		window.location.href = "../view/consign.jsp";
 	}
-	/* function hello(){
-		var btn9 = document.getElementById("daiji");
-		btn9.src="${pageContext.request.contextPath}/consign/up";
-	} */
-	//function hello() {
-	//window.location.href="${pageContext.request.contextPath}/consign/up";
-	//}
+
 	var photo3 = document.getElementById("ershoushu");
 	var but3 = document.getElementById("tushu");
 	photo3.onclick = function() {
