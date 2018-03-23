@@ -15,6 +15,7 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.sd.bean.Coupon;
+import com.sd.dao.ImageMapper;
+import com.sd.service.SqlSessionTool;
 import com.sd.service.imp.CouponServiceClass;
 
 /**
@@ -45,8 +48,9 @@ public class UpLoadCouponController {
 		BigDecimal couponMoney = new BigDecimal(money);
 		String couponType = type;
 		com.sd.bean.Image image2=new com.sd.bean.Image();
-		Timestamp startTime = new Timestamp(2018, 03, 05, 8, 6, 5, 3);
-		Timestamp endTime = new Timestamp(2019, 03, 05, 8, 6, 5, 3);
+		
+		Date startTime=new Date();
+		
 		
 		//图片处理机制
 		if (request instanceof MultipartHttpServletRequest) {
@@ -85,8 +89,10 @@ public class UpLoadCouponController {
 			}
 		}
 		
-		
+		SqlSession session = SqlSessionTool.CreateSqlSession();
+		ImageMapper imageMapper=session.getMapper(ImageMapper.class);
 		Coupon coupon = new Coupon();
+		coupon.setImageId(imageMapper.selectByCreatTime(startTime).getId());
 		coupon.setMoney(couponMoney);
 		coupon.setName(couponName);
 		coupon.setDescription(couponDescriptiion);

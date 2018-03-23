@@ -261,59 +261,63 @@
 							</div>
 							<div class="col-xs-3" style="text-align: right;">
 								<span style="font-size: xx-large;">人数需求</span> <br /> <br /> <span
-									style="font-size: -webkit-xxx-large; color: red;"><b>X${list.count}</b></span>								
-								<p style="font-size: 35px;">${list.contactWay}</p>							
+									style="font-size: -webkit-xxx-large; color: red;"><b>X${list.count}</b></span>
+								<p style="font-size: 35px;">${list.contactWay}</p>
 							</div>
 						</div>
 						<br /> <br /> <br />
 					</form>
-					
+
 				</c:forEach>
 			</div>
 			<div id="tushus" style="display: none;">
-				<form action="${pageContext.request.contextPath}/home/tushus?m=2"
-					method="post">
-					<div id="" class="form-group"
-						style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove;">
-						<div
-							style="position: relative; height: 60px; width: 100%; font-size: 40px;">
-							闪电校园旗下>></div>
-						<div class="col-xs-3" style="height: 300px; text-align: center;">
-							<br /> <img src="../img/makesi.jpg"
-								style="width: 80%; height: 80%;" />
-						</div>
-						<div class="col-xs-9"
-							style="height: 300px; border:; border-radius: 25px;">
-							<br />
-							<div class="col-xs-9" style="text-align: left;">
-								<p id="title"
-									style="font-size: 50px; font-family: '楷体'; color: brown;">马克思基本原理</p>
-								<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--2013年高等教育出版社出版</p>
-								<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;
-									同济大学应用数学系</p>
+				<c:forEach items="${goodAttributePojos}" var="goodAttributePojo">
+					<form action="${pageContext.request.contextPath}/home/tushus?m=2&goodid=${goodAttributePojo.id}"
+						method="post">
+						<div class="form-group"
+							style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove;">
 
+							<div
+								style="position: relative; height: 60px; width: 100%; font-size: 40px;">
+								闪电校园旗下>></div>
+							<div class="col-xs-3" style="height: 300px; text-align: center;">
+								<br /> <img src="${goodAttributePojo.getImgSrc()}"
+									style="width: 80%; height: 80%;" />
 							</div>
-							<div class="col-xs-3" style="text-align: right;">
-								<br /> <span id="kucun" style="font-size: xx-large">X100</span>
-								<br /> <br /> <br /> <span id="yuanjia"
-									style="text-decoration: line-through; font-size: xx-large;">￥19.50</span>
-								<span id="xianjia"
-									style="font-size: -webkit-xxx-large; color: red;"><b>￥4.00</b></span>
-								<button class="btn  btn-warning btn-block" type="submit">购买</button>
-							</div>
-							<div style="display: none;">
-								<input name="tushusid" type="text" value="5" />
-								<!-- 	<input name="m"   type="hidden" value="1"> -->
+							<div class="col-xs-9"
+								style="height: 300px; border:; border-radius: 25px;">
+								<br />
+								<div class="col-xs-9" style="text-align: left;">
+									<p id="title"
+										style="font-size: 50px; font-family: '楷体'; color: brown;">${goodAttributePojo.name}</p>
+									<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;--${goodAttributePojo.company}</p>
+									<p style="font-size: 35px; font-family: '宋体';">&nbsp;&nbsp;&nbsp;
+										${goodAttributePojo.author}</p>
+
+								</div>
+								<div class="col-xs-3" style="text-align: right;">
+									<br /> <span id="kucun" style="font-size: xx-large">X${goodAttributePojo.stock}</span>
+									<br /> <br /> <br /> <span id="yuanjia"
+										style="text-decoration: line-through; font-size: xx-large;">￥${goodAttributePojo.shopPrice}</span>
+									<span id="xianjia"
+										style="font-size: -webkit-xxx-large; color: red;"><b>￥${goodAttributePojo.discountPrice}</b></span>
+									<button class="btn  btn-warning btn-block" type="submit">购买</button>
+								</div>
+								<div style="display: none;">
+									<input name="tushusid" type="text" value="${goodAttributePojo.id}" />
+									<!-- 	<input name="m"   type="hidden" value="1"> -->
+								</div>
 							</div>
 						</div>
-					</div>
-				</form>
+
+					</form>
+				</c:forEach>
 			</div>
 			<div id="fulis" style="display: none;">
 				<form action="${pageContext.request.contextPath}/home/fulis?m=3"
 					method="post">
-					<div id="" class="form-group"
-						style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove;"
+					<div class="form-group"
+						style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove;">
 						href="javascript:form.submit();">
 						<div
 							style="position: relative; height: 60px; width: 100%; font-size: 40px;">
@@ -344,6 +348,7 @@
 
 					</div>
 				</form>
+
 				<form action="${pageContext.request.contextPath}/home/fulis?m=3"
 					method="post">
 					<div id="" class="form-group"
@@ -377,30 +382,35 @@
 			</div>
 		</div>
 
-		<!--底部导航栏-->
+	</div>
 
-		<br /> <br /> <br /> <br /> <br /> <br />
+	<!--底部导航栏-->
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
 
-		<nav class="navbar  navbar-fixed-bottom"
-			role="navigation"
-			style="height:80px;background-color: ;border-color:white;position: fixed;">
-		<div class="col-xs-4"
-			style="text-align: center; background-color: white;">
-			<img src="../img/首页.jpg"
-				style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px; padding: 0px;" />
+	<nav class="navbar  navbar-fixed-bottom" role="navigation"
+		style="height:80px;background-color: ;border-color:white;position: fixed;">
+	<div class="col-xs-4"
+		style="text-align: center; background-color: white;">
+		<img src="../img/首页.jpg"
+			style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px; padding: 0px;" />
 
-		</div>
-		<div id="dingdan" class="col-xs-4"
-			style="text-align: center; background-color: white;">
-			<img src="../img/订单.jpg"
-				style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px;" />
-		</div>
-		<div id="wode" class="col-xs-4"
-			style="text-align: center; background-color: white;">
-			<img src="../img/我的.jpg"
-				style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px;" />
-		</div>
-		</nav>
+	</div>
+	<div id="dingdan" class="col-xs-4"
+		style="text-align: center; background-color: white;">
+		<img src="../img/订单.jpg"
+			style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px;" />
+	</div>
+	<div id="wode" class="col-xs-4"
+		style="text-align: center; background-color: white;">
+		<img src="../img/我的.jpg"
+			style="width: 100%; height: 100%; margin: 0 auto; display: block; bottom: 0px; border: 0px;" />
+	</div>
+	</nav>
 
 	</div>
 

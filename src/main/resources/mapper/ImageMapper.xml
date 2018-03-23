@@ -91,6 +91,12 @@
     from image
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByCreatTime" parameterType="java.util.Date" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from image
+    where create_time = #{create_time,jdbcType=TIMESTAMP}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from image
     where id = #{id,jdbcType=INTEGER}

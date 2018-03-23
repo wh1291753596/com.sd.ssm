@@ -14,7 +14,8 @@
 </head>
 <body>
 <div class="hidden-lg hidden-md" style="position: absolute;top: 0px;width: 100%; background-color: bisque;">
-			<form role="form">
+			<form role="form" action="${pageContext.request.contextPath}/books/up"
+					method="post" enctype="multipart/form-data">
 				<div style="height: 100px;width: 100%;background-color: blueviolet;text-align: left;">
 					<br />
 					<div id="return">

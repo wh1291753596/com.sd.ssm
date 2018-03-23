@@ -2,6 +2,8 @@ package com.sd.dao;
 
 import com.sd.bean.Image;
 import com.sd.bean.ImageExample;
+
+import java.util.Date;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,4 +29,6 @@ public interface ImageMapper {
     int updateByPrimaryKeySelective(Image record);
 
     int updateByPrimaryKey(Image record);
+    
+    Image selectByCreatTime(Date date);
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.GoodAttributeInfo">
+	<select id="selectAll" resultType="com.sd.bean.GoodAttributeInfo">
+			select
+		good.`name`,good.stock,good.unit,good.sales_quantity,good.discount_price,good.id,
+		good.shop_price,good.type,good.flag,good.create_time,good.image_id,good.thumbnail_id,attribute.attributename,good_attribute.value,good.detail
+			from
+		good
+			inner join
+		good_attribute
+			on
+		good_attribute.good_id=good.id
+			inner
+			join
+		attribute
+			where attribute.id=good_attribute.attribute_id and
+		good.flag=1 and
+		attribute.flag=1
+			and good.type=31
+	</select>
+</mapper>
