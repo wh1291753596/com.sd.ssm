@@ -272,7 +272,7 @@
 			</div>
 			<div id="tushus" style="display: none;">
 				<c:forEach items="${goodAttributePojos}" var="goodAttributePojo">
-					<form action="${pageContext.request.contextPath}/home/tushus?m=2&goodid=${goodAttributePojo.id}"
+					<form action="${pageContext.request.contextPath}/Oreder_Purchase/books?m=2&goodid=${goodAttributePojo.id}"
 						method="post">
 						<div class="form-group"
 							style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove;">

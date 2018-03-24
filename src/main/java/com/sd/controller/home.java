@@ -46,15 +46,10 @@ public class home {
 		}
 		model.addAttribute("parttimejob", parttimejobs);
 		IGoodAttributeInfoService goodAttributeInfoService=new GoodAttributeInfoService();
-		List<GoodAttributeInfo> goodAttributeInfos=goodAttributeInfoService.selectAll();
-		
+		List<GoodAttributeInfo> goodAttributeInfos=goodAttributeInfoService.selectAll();	
 		ConvertInfo convertInfo=new ConvertInfo();
-
-		List<GoodAttributePojo>goodAttributePojos=new ArrayList<>();
-		
-		
+		List<GoodAttributePojo>goodAttributePojos=new ArrayList<>();			
 		List<GoodAttributeBooksInfo> goodAttributeBooksInfos=convertInfo.convert(goodAttributeInfos);
-		
 		
 		for(GoodAttributeBooksInfo aBooksInfo:goodAttributeBooksInfos) {
 			//为了不在构建新的pojo映射

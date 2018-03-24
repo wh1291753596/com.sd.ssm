@@ -7,4 +7,6 @@ import com.sd.bean.GoodAttributeInfo;
 public interface IGoodAttributeInfoService {
 
 	List<GoodAttributeInfo> selectAll();
+	
+	List<GoodAttributeInfo> selectByGoodid(Integer id);
 }

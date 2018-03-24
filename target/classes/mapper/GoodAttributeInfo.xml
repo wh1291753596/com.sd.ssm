@@ -11,12 +11,30 @@
 		good_attribute
 			on
 		good_attribute.good_id=good.id
-			inner
-			join
+			inner join		
 		attribute
-			where attribute.id=good_attribute.attribute_id and
+			on attribute.id=good_attribute.attribute_id and
 		good.flag=1 and
 		attribute.flag=1
 			and good.type=31
+	</select>
+	<select id="selectByGoodid" resultType="com.sd.bean.GoodAttributeInfo" parameterType="java.lang.Integer">
+			select
+		good.`name`,good.stock,good.unit,good.sales_quantity,good.discount_price,good.id,
+		good.shop_price,good.type,good.flag,good.create_time,good.image_id,good.thumbnail_id,attribute.attributename,good_attribute.value,good.detail
+			from
+		good
+			inner join
+		good_attribute
+			on
+		good_attribute.good_id=good.id
+			inner join			
+		attribute
+			on attribute.id=good_attribute.attribute_id 
+			where good.id = #{id,jdbcType=INTEGER} and
+		good.flag=1 and
+		attribute.flag=1
+			and good.type=31 
+			
 	</select>
 </mapper>

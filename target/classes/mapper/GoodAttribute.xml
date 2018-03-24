@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.GoodAttribute">
-	<insert id="insertRecord" 
-		parameterType="com.sd.pojos.GoodsAttributeInfo">
-		insert into good_attribute (good_id, attribute_id,
+	<insert id="insertRecord" parameterType="com.sd.pojos.GoodsAttributeInfo">
+		insert into
+		good_attribute (good_id, attribute_id,
 		value,
 		create_time)
-		values (#{goodsId,jdbcType=INTEGER}, #{attributeId,jdbcType=INTEGER},
+		values
+		(#{goodsId,jdbcType=INTEGER}, #{attributeId,jdbcType=INTEGER},
 		#{value,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP})
 	</insert>
+	<select id="selectByGoodid" parameterType="java.lang.Integer"
+		resultType="com.sd.pojos.GoodsAttributeInfo">
+		select
+		good_attribute.good_id,
+		good_attribute.attribute_id,
+		good_attribute.value,
+		good_attribute.create_time
+		from `good_attribute`
+		where good_id = #{goodsId,jdbcType=INTEGER}
+	</select>
 </mapper>

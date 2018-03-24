@@ -19,4 +19,13 @@ public class GoodAttributeInfoService implements IGoodAttributeInfoService {
 		return goodAttributeInfos;
 				
 	}
+	
+	@Override
+	public  List<GoodAttributeInfo> selectByGoodid(Integer id){
+		SqlSession session = SqlSessionTool.CreateSqlSession();
+		List<GoodAttributeInfo> goodAttributeInfos=session.selectList("mapper.GoodAttributeInfo.selectByGoodid", id);
+		session.commit();
+		session.close();		
+		return goodAttributeInfos;
+	}
 }
