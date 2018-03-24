@@ -24,6 +24,8 @@ import com.sd.dao.TempMapper;
 import com.sd.pojos.GoodsAttributeInfo;
 import com.sd.service.GetUserAddressKeyInfo;
 import com.sd.service.IGoodsAttributeService;
+import com.sd.service.OrderStatusEnum;
+import com.sd.service.OrderTypeEnum;
 import com.sd.service.SqlSessionTool;
 import com.sd.service.imp.GoodAttributeInfoService;
 import com.sd.service.imp.GoodsAttribute;
@@ -106,6 +108,10 @@ public class TestAddressKeyInfo {
 		gAttributeInfo.setAttributeId(1);
 		IGoodsAttributeService goodsAttributeService=new GoodsAttribute();
 		goodsAttributeService.insertRecord(gAttributeInfo);*/
+		
+		//enum类测试
+		byte a = OrderTypeEnum.GetOrder.getIndex();
+		System.out.println(a);
 		
 	}
 
