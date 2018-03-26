@@ -31,4 +31,13 @@ public class OrderService implements IOrderService {
 		
 		return order;
 	}
+	
+	public int UpdateOrderInfo(Order order) {
+		SqlSession sqlSession = SqlSessionTool.CreateSqlSession();
+		int count = sqlSession.update("com.sd.dao.OrderMapper.updateByPrimaryKey", order);
+		sqlSession.commit();
+		sqlSession.close();
+		
+		return count;
+	}
 }

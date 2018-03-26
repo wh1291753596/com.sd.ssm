@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sd.dao.AdminUserFunctionManageMapper">
+
+	<!-- 查询指定系统用户的所有角的权限并集 -->
+	<select id="selectAllJurisdictionByAdminUserId" parameterType="java.lang.Integer"
+		resultType="java.lang.Integer">
+	SELECT DISTINCT admin_function.id
+		FROM admin_user
+		LEFT JOIN admin_user_role ON admin_user_role.admin_user_id = admin_user.id
+		LEFT JOIN admin_role ON admin_user_role.admin_role_id = admin_role.id
+		LEFT JOIN admin_role_function ON admin_role_function.admin_role_id = admin_role.id
+		LEFT JOIN admin_function ON admin_role_function.admin_function_id = admin_function.id
+		WHERE admin_user.flag = 1 AND admin_user.id = #{adminUserId,jdbcType=INTEGER}
+	</select>
+
+	<!-- 删除单个用户所有权限  采用flag形式进行假删 -->
+	<update id="DenyAllJurisdictionByAdminUserId" parameterType="java.lang.Integer">
+    update admin_user
+    set flag = 0
+    where id = #{adminUserId,jdbcType=INTEGER}
+    </update>
+</mapper>

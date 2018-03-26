@@ -39,6 +39,6 @@
 
 		<!-- 对应每个表 -->
 		
-		<table tableName="order_status" domainObjectName="OrderStatus"/>	
+		<table tableName="admin_user" domainObjectName="Admin_user"/>	
 	</context>
 </generatorConfiguration>
