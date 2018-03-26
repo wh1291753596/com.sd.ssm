@@ -44,7 +44,7 @@ public class OrderManager {
 			orderMapper.updateByPrimaryKeySelective(order);
 			session.commit();
 			session.close();
-			return "orderManage";
+			return "orderManage/query";
 		}		
 		else {
 			OrederManager_Query orederManager_Query=new OrederManager_Query();

@@ -39,6 +39,6 @@
 
 		<!-- 对应每个表 -->			
 		<table tableName="good_attribute" domainObjectName="GoodAttribute"/>
-		<table tableName="admin_user" domainObjectName="Admin_user"/>	
+		
 	</context>
 </generatorConfiguration>

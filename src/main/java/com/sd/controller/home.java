@@ -45,6 +45,7 @@ public class home {
 			System.out.println(iParttimejob.getName());
 		}
 		model.addAttribute("parttimejob", parttimejobs);
+		
 		IGoodAttributeInfoService goodAttributeInfoService=new GoodAttributeInfoService();
 		List<GoodAttributeInfo> goodAttributeInfos=goodAttributeInfoService.selectAll();	
 		ConvertInfo convertInfo=new ConvertInfo();

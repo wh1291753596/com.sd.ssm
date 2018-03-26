@@ -11,7 +11,7 @@ public class SqlSessionTool {
 		
 		try {
 			// 获取mybatis配置文件
-			FileInputStream fStream=new FileInputStream("C://Users//刘泰//Desktop//闪电速代//project//com.sd.ssm//src/main/resources/mybatisConfig.xml");
+			FileInputStream fStream=new FileInputStream("E:\\EclipseFiles\\com.sd.ssm\\src\\main\\resources\\mybatisConfig.xml");
 			//创建会话对象
 			SqlSession session=new SqlSessionFactoryBuilder().build(fStream).openSession();
 			return session;

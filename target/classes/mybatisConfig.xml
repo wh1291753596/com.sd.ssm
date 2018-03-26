@@ -27,27 +27,31 @@
 	<mappers>
 		<!-- 单个配置 -->
 		<mapper resource="mapper/AddressKeyInfoMapper.xml" />
-		<mapper resource="mapper/OrderGoodMapper.xml" />
-		<mapper resource="mapper/SendMapper.xml" />
-		<mapper resource="mapper/OrderMapper.xml" />
-		<mapper resource="mapper/CouponMapper.xml" />
-		<mapper resource="mapper/ImageMapper.xml" />
-		<mapper resource="mapper/TempMapper.xml" />
-		<mapper resource="mapper/UserCouponServiceMapper.xml" />
-		<mapper resource="mapper/userMapper.xml" />
-		<mapper resource="mapper/ParttimejobMapper.xml" />
 		<mapper resource="mapper/AddressMapper.xml" />
 		<mapper resource="mapper/Admin_userMapper.xml" />
+		<mapper resource="mapper/AdminUserFunctionManageMapper.xml" />
 		<mapper resource="mapper/AttributeMapper.xml" />
-		<mapper resource="mapper/GoodAttributeInfo.xml" />
-		<mapper resource="mapper/GoodMapper.xml" />
-		<mapper resource="mapper/GoodAttribute.xml" />
-		<mapper resource="mapper/OrderManagerMapper.xml" />
+		<mapper resource="mapper/CouponMapper.xml" />
 		<mapper resource="mapper/GetMapper.xml" />
-		<mapper resource="mapper/Order_statusMapper.xml" />
-		<mapper resource="mapper/OrderManagerMapper.xml" />
 		<mapper resource="mapper/GetSendOrderInfoMapper.xml" />
-		<mapper resource="mapper/AdminUserFunctionManageMapper.xml"/>
+		<mapper resource="mapper/GoodAttribute.xml" />
+		<mapper resource="mapper/GoodAttributeInfo.xml" />
+		<mapper resource="mapper/GoodAttributeMapper.xml" /> 
+		<mapper resource="mapper/GoodMapper.xml" />
+		<mapper resource="mapper/ImageMapper.xml" />
+		<mapper resource="mapper/Order_statusMapper.xml" />
+		<mapper resource="mapper/OrderGoodMapper.xml" />
+		<mapper resource="mapper/OrderManagerMapper.xml" />
+		<mapper resource="mapper/OrderMapper.xml" />
+		<mapper resource="mapper/OrderStatusMapper.xml" />
+		<mapper resource="mapper/ParttimejobMapper.xml" />
+		<mapper resource="mapper/SendMapper.xml" />
+		<mapper resource="mapper/TempMapper.xml" />
+		<mapper resource="mapper/UserCouponMapper.xml" />
+		<mapper resource="mapper/UserCouponServiceMapper.xml" />
+		<mapper resource="mapper/userMapper.xml" />
+
+
 		<!-- 名字相同的dao文件和xml文件放在一起可直接扫描 -->
 		<!-- <package name="com.sd.dao"/> -->
 	</mappers>
