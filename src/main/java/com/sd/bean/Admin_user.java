@@ -21,6 +21,8 @@ public class Admin_user {
 
     private Date updateTime;
 
+    private Byte flag;
+
     public Integer getId() {
         return id;
     }
@@ -91,5 +93,13 @@ public class Admin_user {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Byte getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Byte flag) {
+        this.flag = flag;
     }
 }

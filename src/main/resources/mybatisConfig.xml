@@ -46,6 +46,8 @@
 		<mapper resource="mapper/GetMapper.xml" />
 		<mapper resource="mapper/Order_statusMapper.xml" />
 		<mapper resource="mapper/OrderManagerMapper.xml" />
+		<mapper resource="mapper/GetSendOrderInfoMapper.xml" />
+		<mapper resource="mapper/AdminUserFunctionManageMapper.xml"/>
 		<!-- 名字相同的dao文件和xml文件放在一起可直接扫描 -->
 		<!-- <package name="com.sd.dao"/> -->
 	</mappers>

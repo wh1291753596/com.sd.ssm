@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sd.bean.dao.GetSendOrderInfoMapper">
+	<resultMap id="SendOrderInfotMap" type="com.sd.bean.SendOrderInfo">
+		<result column="company" jdbcType="VARCHAR" property="company" />
+		<result column="user_id" jdbcType="INTEGER" property="senderId" />
+		<result column="name" jdbcType="VARCHAR" property="sendrName" />
+		<result column="phone" jdbcType="VARCHAR" property="senderPhone" />
+		<result column="detail" jdbcType="VARCHAR" property="sendrAddress" />
+		<result column="receiver" jdbcType="VARCHAR" property="accepterName" />
+		<result column="phone" jdbcType="VARCHAR" property="accepterPhone" />
+		<result column="address" jdbcType="VARCHAR" property="accepterAddress" />
+		<result column="id" jdbcType="INTEGER" property="orderId" />
+		<result column="express_number" jdbcType="VARCHAR" property="expressNumber" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="time" />
+		<result column="remark" jdbcType="VARCHAR" property="note" />
+		<result column="total_price" jdbcType="DECIMAL" property="totalPrice" />
+	</resultMap>
+	<resultMap id="GetOrderInfotMap" type="com.sd.bean.GetOrderInfo">
+		<result column="company" jdbcType="VARCHAR" property="company" />
+		<result column="pick_code" jdbcType="VARCHAR" property="pickCode" />
+		<result column="user_id" jdbcType="INTEGER" property="accepterId"/>
+		<result column="detail" jdbcType="VARCHAR" property="detail"/>
+		<result column="receiver" jdbcType="VARCHAR" property="accepterName" />
+		<result column="phone" jdbcType="VARCHAR" property="accepterPhone" />
+		<result column="address" jdbcType="VARCHAR" property="accepterAddress" />
+		<result column="id" jdbcType="INTEGER" property="orderId" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="time" />
+		<result column="remark" jdbcType="VARCHAR" property="note" />
+		<result column="total_price" jdbcType="DECIMAL" property="totalPrice" />
+	</resultMap>
+	
+	<!-- 根据订单状态查询代取订单信息 -->
+	<select id="selectGetOrderInfoByOrderStatus" parameterType="java.lang.Integer" resultMap="GetOrderInfotMap">
+	SELECT get.company,get.pick_code,`user`.id,address.detail,`order`.receiver,`order`.phone,`order`.address,
+		`order`.id,`order`.create_time,`order`.remark,`order`.total_price
+		FROM `order` 
+		LEFT JOIN order_status ON `order`.order_status_id = order_status.id
+		LEFT JOIN `user` ON `user`.id =`order`.user_id
+		LEFT JOIN address ON `user`.default_address_id = address.id
+		LEFT JOIN order_good ON order_good.order_id = `order`.id
+    	LEFT JOIN get ON order_good.good_id = get.id
+		WHERE `order`.type = 1 AND order_status.id = #{orderStatusId,jdbcType=INTEGER} AND `order`.flag = 1
+    </select>
+  
+  	<!-- 根据订单状态查询代寄订单信息 -->
+	<select id="selectSendOrderInfoByOrderStatus" parameterType="java.lang.Integer" resultMap="SendOrderInfotMap">
+	SELECT send.company,`user`.id,`user`.`name`,`user`.phone,address.area,`order`.receiver,`order`.phone,
+		`order`.address,`order`.id,`order`.express_number,`order`.create_time,`order`.remark,`order`.total_price
+		FROM `order`
+		LEFT JOIN order_status ON `order`.order_status_id = order_status.id
+		LEFT JOIN `user` ON `order`.user_id = `user`.id
+		LEFT JOIN address ON `user`.default_address_id = address.id
+		LEFT JOIN order_good ON `order`.id = order_good.order_id
+		LEFT JOIN send ON order_good.good_id = send.id
+		WHERE `order`.type = 3 and order_status.id = #{orderStatusId,jdbcType=INTEGER} AND `order`.flag = 1
+  	</select>
+  
+</mapper>

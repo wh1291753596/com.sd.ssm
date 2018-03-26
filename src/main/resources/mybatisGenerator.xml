@@ -37,9 +37,8 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
-		<!-- 对应每个表 -->
-		
-		
+		<!-- 对应每个表 -->			
 		<table tableName="good_attribute" domainObjectName="GoodAttribute"/>
+		<table tableName="admin_user" domainObjectName="Admin_user"/>	
 	</context>
 </generatorConfiguration>
