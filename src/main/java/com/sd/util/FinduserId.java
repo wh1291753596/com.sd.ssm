@@ -18,9 +18,7 @@ public class FinduserId
 		SqlSession session = SqlSessionTool.CreateSqlSession();
 		userMapper iUserMapper = session.getMapper(userMapper.class);
 		user uuUser = new user();
-		uuUser = iUserMapper.selectByName(username);
-		System.out.println(uuUser.getName());
-		System.out.println(uuUser.getId());
+		uuUser = iUserMapper.selectByName(username);	
 		return uuUser.getId();
 	}
 }

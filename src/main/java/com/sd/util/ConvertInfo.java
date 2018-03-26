@@ -16,7 +16,6 @@ public class ConvertInfo {
 		List<GoodAttributeBooksInfo> goodAttributeBooksInfos=new ArrayList<GoodAttributeBooksInfo>();
 		for (int i=0;i<goodAttributeInfos.size();i=i+2)
 		{
-			System.out.println(goodAttributeInfos.size());
 			GoodAttributeBooksInfo goodAttributeBooksInfo=new GoodAttributeBooksInfo();
 			goodAttributeBooksInfo.setName(goodAttributeInfos.get(i).getName());
 			goodAttributeBooksInfo.setUnit(goodAttributeInfos.get(i).getUnit());

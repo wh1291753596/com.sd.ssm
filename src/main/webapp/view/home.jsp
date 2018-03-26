@@ -314,11 +314,11 @@
 				</c:forEach>
 			</div>
 			<div id="fulis" style="display: none;">
-				<form action="${pageContext.request.contextPath}/home/fulis?m=3"
+				<form action="${pageContext.request.contextPath}/Oreder_Purchase/tickets?m=31"
 					method="post">
 					<div class="form-group"
 						style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove;">
-						href="javascript:form.submit();">
+						
 						<div
 							style="position: relative; height: 60px; width: 100%; font-size: 40px;">
 							闪电校园旗下>></div>
@@ -349,7 +349,7 @@
 					</div>
 				</form>
 
-				<form action="${pageContext.request.contextPath}/home/fulis?m=3"
+				<form action="${pageContext.request.contextPath}/home/fulis?m=32"
 					method="post">
 					<div id="" class="form-group"
 						style="position: relative; height: 355px; width: 100%; overflow: hidden; border: groove;"
@@ -419,7 +419,7 @@
 	var but1 = document.getElementById("wode");
 	var but2 = document.getElementById("dingdan");
 	but2.onclick = function() {
-		window.location.href = "${pageContext.request.contextPath}/AddressManage/query";
+		window.location.href = "${pageContext.request.contextPath}/OrderManager/query";
 	}
 	but1.onclick = function() {
 		window.location.href = "../view/my.jsp";

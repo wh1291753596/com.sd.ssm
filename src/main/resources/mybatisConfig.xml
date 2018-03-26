@@ -40,10 +40,12 @@
 		<mapper resource="mapper/Admin_userMapper.xml" />
 		<mapper resource="mapper/AttributeMapper.xml" />
 		<mapper resource="mapper/GoodAttributeInfo.xml" />
-		<mapper resource="mapper/GoodAttributeMapper.xml" />
 		<mapper resource="mapper/GoodMapper.xml" />
 		<mapper resource="mapper/GoodAttribute.xml" />
-
+		<mapper resource="mapper/OrderManagerMapper.xml" />
+		<mapper resource="mapper/GetMapper.xml" />
+		<mapper resource="mapper/Order_statusMapper.xml" />
+		<mapper resource="mapper/OrderManagerMapper.xml" />
 		<!-- 名字相同的dao文件和xml文件放在一起可直接扫描 -->
 		<!-- <package name="com.sd.dao"/> -->
 	</mappers>

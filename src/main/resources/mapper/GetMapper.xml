@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sd.dao.GetMapper">
+  <resultMap id="BaseResultMap" type="com.sd.bean.Get">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="pick_code" jdbcType="VARCHAR" property="pickCode" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="company" jdbcType="VARCHAR" property="company" />
+    <result column="inform_date" jdbcType="DATE" property="informDate" />
+    <result column="is_urgent" jdbcType="TINYINT" property="isUrgent" />
+    <result column="urgent_time" jdbcType="VARCHAR" property="urgentTime" />
+    <result column="delivery_man_id" jdbcType="INTEGER" property="deliveryManId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, pick_code, type, company, inform_date, is_urgent, urgent_time, delivery_man_id, 
+    create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.sd.bean.GetExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from get
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from get
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+   <select id="selectByTime" parameterType="java.util.Date"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from `get`
+		where create_time = #{createTime,jdbcType=TIMESTAMP}
+	</select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from get
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.sd.bean.GetExample">
+    delete from get
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.sd.bean.Get">
+    insert into get (id, pick_code, type, 
+      company, inform_date, is_urgent, 
+      urgent_time, delivery_man_id, create_time, 
+      update_time)
+    values (#{id,jdbcType=INTEGER}, #{pickCode,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{company,jdbcType=VARCHAR}, #{informDate,jdbcType=DATE}, #{isUrgent,jdbcType=TINYINT}, 
+      #{urgentTime,jdbcType=VARCHAR}, #{deliveryManId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sd.bean.Get">
+    insert into get
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pickCode != null">
+        pick_code,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="company != null">
+        company,
+      </if>
+      <if test="informDate != null">
+        inform_date,
+      </if>
+      <if test="isUrgent != null">
+        is_urgent,
+      </if>
+      <if test="urgentTime != null">
+        urgent_time,
+      </if>
+      <if test="deliveryManId != null">
+        delivery_man_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pickCode != null">
+        #{pickCode,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="informDate != null">
+        #{informDate,jdbcType=DATE},
+      </if>
+      <if test="isUrgent != null">
+        #{isUrgent,jdbcType=TINYINT},
+      </if>
+      <if test="urgentTime != null">
+        #{urgentTime,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryManId != null">
+        #{deliveryManId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.sd.bean.GetExample" resultType="java.lang.Long">
+    select count(*) from get
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update get
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.pickCode != null">
+        pick_code = #{record.pickCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.company != null">
+        company = #{record.company,jdbcType=VARCHAR},
+      </if>
+      <if test="record.informDate != null">
+        inform_date = #{record.informDate,jdbcType=DATE},
+      </if>
+      <if test="record.isUrgent != null">
+        is_urgent = #{record.isUrgent,jdbcType=TINYINT},
+      </if>
+      <if test="record.urgentTime != null">
+        urgent_time = #{record.urgentTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deliveryManId != null">
+        delivery_man_id = #{record.deliveryManId,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update get
+    set id = #{record.id,jdbcType=INTEGER},
+      pick_code = #{record.pickCode,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      company = #{record.company,jdbcType=VARCHAR},
+      inform_date = #{record.informDate,jdbcType=DATE},
+      is_urgent = #{record.isUrgent,jdbcType=TINYINT},
+      urgent_time = #{record.urgentTime,jdbcType=VARCHAR},
+      delivery_man_id = #{record.deliveryManId,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sd.bean.Get">
+    update get
+    <set>
+      <if test="pickCode != null">
+        pick_code = #{pickCode,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        company = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="informDate != null">
+        inform_date = #{informDate,jdbcType=DATE},
+      </if>
+      <if test="isUrgent != null">
+        is_urgent = #{isUrgent,jdbcType=TINYINT},
+      </if>
+      <if test="urgentTime != null">
+        urgent_time = #{urgentTime,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryManId != null">
+        delivery_man_id = #{deliveryManId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sd.bean.Get">
+    update get
+    set pick_code = #{pickCode,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      company = #{company,jdbcType=VARCHAR},
+      inform_date = #{informDate,jdbcType=DATE},
+      is_urgent = #{isUrgent,jdbcType=TINYINT},
+      urgent_time = #{urgentTime,jdbcType=VARCHAR},
+      delivery_man_id = #{deliveryManId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -75,8 +75,8 @@
 					</h1></label> <select class="form-control" name="peoplecompany"
 					style="height: 50px; font-size: x-large; width: 100%">
 					<option>中通</option>
-					<option>2</option>
-					<option>3</option>
+					<option>韵达</option>
+					<option>圆通</option>
 					<option>4</option>
 					<option>5</option>
 				</select>
@@ -89,16 +89,8 @@
 					name="peoplename" placeholder="请输入收件人姓名"
 					style="height: 50px; width: 100%; font-size: x-large;">
 			</div>
-			<%-- <div>
-			12345
-			<c:forEach items="${mytest}" var="list">
-				<p>${list.name}</p>
-				<p>${list.phone}</p>
-				<p>${list.detail}</p>
-			</c:forEach>
 			
-			
-			</div> --%>
+							
 			<div class="form-group">
 				<label class="alert-success"
 					style="text-align: left; background-color: bisque;"><h1>

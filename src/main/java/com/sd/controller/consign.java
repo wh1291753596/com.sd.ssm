@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sd.bean.Order;
+import com.sd.bean.OrderGood;
 import com.sd.bean.Send;
 import com.sd.bean.user;
+import com.sd.dao.OrderGoodMapper;
 import com.sd.dao.OrderMapper;
 import com.sd.dao.SendMapper;
 import com.sd.dao.userMapper;
@@ -31,87 +33,70 @@ import com.sd.util.cookies;
 public class consign {
 
 	/*
-	 * acthor:WangHao time：2018/03/08
+	 * acthor:WangHao 
+	 * time：2018/03/08
+	 * 代寄快递上传
 	 */
 	@RequestMapping("/up")
 	public String consignup(HttpServletRequest request, Model model) {
-		Boolean judgelogin = null;
+
+		// 插入send表
+		String conpany = request.getParameter("peoplecompany");// 快递公司
+		String name = request.getParameter("peoplename");// 收件人姓名
+		String phone = request.getParameter("peoplephone");// 收件人电话
+		String address = request.getParameter("peopleaddress");// 收件人地址
+		String remark = request.getParameter("peopleinfo");// 备注
+		Send send = new Send();
+		send.setCompany(conpany);
+		Date now = new Date();
+		send.setCreateTime(now);
+		SqlSession session = SqlSessionTool.CreateSqlSession();
+		SendMapper sendMapper = session.getMapper(SendMapper.class);
+		sendMapper.insertSelective(send);
+		session.commit();
+		Integer sendid = sendMapper.selectByCreateTime(now).getId();// 获取sendid
+		// 获取userid
 		cookies uCookies = new cookies();
-		judgelogin = uCookies.judge(request);
-		if (judgelogin.equals(false)) {
-			return "login";
-		} else {
-
-			String getusername = null;
-			Integer getuserid=null;
-			getusername = uCookies.getusername(request);
-			FinduserId finduserId=new FinduserId();
-			getuserid=finduserId.getuserid(getusername);
-			System.out.println(getuserid);
-			System.out.println(getusername);
-			
-			String conpany = request.getParameter("peoplecompany");
-			String name = request.getParameter("peoplename");
-			String phone = request.getParameter("peoplephone");
-			String address = request.getParameter("peopleaddress");
-			String info = request.getParameter("peopleinfo");
-
-			SqlSession session = SqlSessionTool.CreateSqlSession();
-			SendMapper sendMapper = session.getMapper(SendMapper.class);
-
-			Date ob = new Date();
-
-			// 创建send记录
-			Send send = new Send();
-			send.setCompany(conpany);
-			send.setCreateTime(ob);
-			sendMapper.insert(send);
-			session.commit();
-
-			// 查询
-			send = sendMapper.selectByCreateTime(ob);
-			session.commit();
-			session.close();
-
-			SqlSession sessiona = SqlSessionTool.CreateSqlSession();
-
-			// 表示代寄
-			byte a = 3;
-			// 表示有效
-			byte b = 1;
-			// 表示结算价格
-			BigDecimal c = new BigDecimal(0.0);
-			// 表示优惠后价格
-			BigDecimal d = new BigDecimal(0.0);
-			// 创建order对象
-
-			Order order = new Order();
-
-			order.setUserId(1);
-			order.setReceiver(name);
-			order.setPhone(phone);
-			order.setAddress(address);
-			order.setRemark(info);
-			order.setCreateTime(ob);
-			order.setFlag(b);
-			order.setType(a);
-			order.setTotalPrice(c);
-			order.setTotalSettlementPrice(d);
-			order.setOrderStatusId(1);
-			OrderMapper orderMapper = sessiona.getMapper(OrderMapper.class);
-			// 插入数据
-			orderMapper.insert(order);
-			sessiona.commit();
-
-			// 查询数据
-			order = orderMapper.selectByCreateTime(ob);
-			sessiona.commit();
-
-			sessiona.close();
-
-			System.out.println("id=" + order.getId() + "    createTime=" + order.getCreateTime());
-
-			return "my";
-		}
+		String getusername = uCookies.getusername(request);
+		FinduserId finduserId = new FinduserId();
+		Integer getuserid = finduserId.getuserid(getusername);
+		// 插入记录到order表
+		Order order = new Order();
+		order.setUserId(getuserid);
+		order.setOrderStatusId(1);
+		order.setRemark(remark);
+		order.setAddress(address);
+		order.setReceiver(name);
+		order.setPhone(phone);
+		Byte kByte = 3;// 3表示代寄
+		order.setType(kByte);
+		BigDecimal Price = new BigDecimal(0.1);
+		// 这里将价格全部上传为0.1，仅仅适用于快递而且需要在购买页面修改
+		order.setTotalPrice(Price);
+		order.setTotalSettlementPrice(Price);
+		Byte flag = 1;
+		order.setFlag(flag);
+		order.setCreateTime(now);
+		OrderMapper orderMapper = session.getMapper(OrderMapper.class);
+		orderMapper.insertSelective(order);
+		session.commit();
+		// 插入到order_good表
+		order = orderMapper.selectByCreateTime(now);// 查询order.id
+		OrderGood orderGood = new OrderGood();
+		orderGood.setOrderId(order.getId());
+		orderGood.setGoodId(sendid);
+		orderGood.setGoodName("代寄快递");
+		// 这里将价格全部上传为0.1，仅仅适用于快递而且需要在购买页面修改
+		orderGood.setDiscountPrice(Price);
+		orderGood.setShopPrice(Price);
+		orderGood.setGoodQuantity(kByte);
+		orderGood.setCreateTime(now);
+		OrderGoodMapper orderGoodMapper = session.getMapper(OrderGoodMapper.class);
+		orderGoodMapper.insertSelective(orderGood);
+		session.commit();
+		session.close();
+		
+		return "successful";
 	}
+
 }

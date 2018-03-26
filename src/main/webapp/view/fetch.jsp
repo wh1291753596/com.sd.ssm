@@ -25,7 +25,8 @@
 <body>
 	<div class="hidden-lg hidden-md"
 		style="position: absolute; top: 0px; width: 100%; background-color: bisque;">
-		<form role="form">
+		<form role="form" action="${pageContext.request.contextPath}/fetch/add"
+			method="post">
 			<div style="text-align: center;">
 				<br /> <br /> <br /> <br /> <img src="../img/151818492711346.png"
 					style="width: 60%;" />
@@ -71,43 +72,43 @@
 						大件说明：<br>
 					</h1></label>
 				<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+超过中件规格的为大件</h2>
-				\ <label class="alert-warning"
+				 <label class="alert-warning"
 					style="text-align: left; background-color: bisque;"><h1>
 						加急说明：<br>
 					</h1></label>
 				<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+XXXXXXXXXXXXXX</h2>
-				\
+				
 			</div>
 			<div class="form-group">
 				<label class="alert-success"
 					style="text-align: left; background-color: bisque;"><h1>
 						快递公司&nbsp;*：<br>
-					</h1></label> <select class="form-control"
+					</h1></label> <select class="form-control" name="company"
 					style="height: 50px; font-size: x-large;">
 					<option>中通</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
+					<option>圆通</option>
+					<option>申通</option>
+					<option>韵达</option>
+					<option>顺丰</option>
 				</select>
 			</div>
 			<div class="form-group">
 				<label class="alert-success"
 					style="text-align: left; background-color: bisque;"><h1>
 						取货码&nbsp;*：<br>
-					</h1></label> <input type="text" class="form-control" id="firstname"
+					</h1></label> <input type="text" name="pick_code" class="form-control" id="firstname"
 					placeholder="请输入取货码" style="height: 50px; font-size: x-large;">
 			</div>
 			<div class="form-group">
 				<label class="alert-success"
 					style="text-align: left; background-color: bisque;"><h1>
 						快递类型&nbsp;*：<br>
-					</h1></label> <select class="form-control"
+					</h1></label> <select class="form-control" name="type"
 					style="height: 50px; font-size: x-large;">
 					<option>大件物品</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
+					<option>小件物品</option>
+					<option>易碎品</option>
+					<option>图书</option>
 					<option>5</option>
 				</select>
 			</div>
@@ -118,12 +119,12 @@
 					</h1></label>
 				<h2>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><input
-						id="show" name="judge" type="radio" value=""
+						id="show" name="judge" type="radio" value="是"
 						style="height: 30px; width: 30px;" />是</label>
 				</h2>
 				<h2>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><input
-						id="hide" name="judge" type="radio" value=""
+						id="hide" name="judge" type="radio" value="否"
 						style="height: 30px; width: 30px;" checked />否</label>
 				</h2>
 			</div>
@@ -134,17 +135,17 @@
 					</h1></label>
 				<h2>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><input
-						name="time" type="radio" value=""
+						name="time" type="radio" value="30"
 						style="height: 30px; width: 30px;" />半小时内</label>
 				</h2>
 				<h2>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><input
-						name="time" type="radio" value=""
+						name="time" type="radio" value="60"
 						style="height: 30px; width: 30px;" />1小时内</label>
 				</h2>
 				<h2>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><input
-						name="time" type="radio" value=""
+						name="time" type="radio" value="120"
 						style="height: 30px; width: 30px;" />2小时内</label>
 				</h2>
 			</div>
@@ -153,7 +154,7 @@
 					style="text-align: left; background-color: bisque;"><h1>
 						备注&nbsp;：<br>
 					</h1></label>
-				<textarea class="form-control" rows="2" placeholder="请输入备注(可选)"
+				<textarea name="remake" class="form-control" rows="2" placeholder="请输入备注(可选)"
 					style="font-size: x-large;"></textarea>
 			</div>
 			<br /> <br /> <br /> <br />

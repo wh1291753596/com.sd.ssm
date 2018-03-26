@@ -32,6 +32,7 @@ public class login {
 	/*
 	 * acthor:WangHao
 	 * time：2018/03/11
+	 * 前端用户登陆
 	*/
 	
 	@RequestMapping("/up")

@@ -17,10 +17,8 @@ public class cookies {
 		Cookie[] cookies = request.getCookies();
 		for (Cookie cookie : cookies) {
 			cookiename = cookie.getName();
-			if ("shandianxiaoyuan".equals(cookiename)) {
-				System.out.println(cookiename);
-				cookievalues = cookie.getValue();
-				System.out.println(cookievalues);
+			if ("shandianxiaoyuan".equals(cookiename)) {			
+				cookievalues = cookie.getValue();			
 			}
 		}
 		String[] user = cookievalues.split(",");
